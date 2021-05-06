@@ -1,0 +1,73 @@
+// $font-size
+@mixin font-size($grid-breakpoints: null) {
+
+    @each $key,
+    $value in $font-size {
+
+        .font-size#{$grid-breakpoints}-#{$key} {
+            font-size: $value !important;
+        }
+    }
+}
+
+// $h1-h6
+@mixin h1-h6($grid-breakpoints: null) {
+
+    @each $key,
+    $value in $h1-h6 {
+
+        .#{$key}#{$grid-breakpoints} {
+            font-size: $value !important;
+        }
+    }
+}
+
+@include font-size();
+
+@include media-breakpoint-up(md) {
+    @include font-size(-md);
+    @include h1-h6(-md);
+}
+
+@include media-breakpoint-up(lg) {
+    @include font-size(-lg);
+    @include h1-h6(-lg);
+}
+
+@include media-breakpoint-up(xl) {
+    @include font-size(-xl);
+    @include h1-h6(-xl);
+}
+
+
+
+
+// hover
+.hover-letterSpacing {
+    @include linear;
+    &:hover {
+        @include linear;
+        letter-spacing: .2rem;
+    }
+}
+
+// text
+.text-border-white {
+    -webkit-text-stroke: .5px white;
+    color: transparent;
+}
+
+// animation
+.animation-rotate {
+    animation: rotate 3000ms linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,25 @@
+.goTop {
+    position: fixed;
+    bottom: 22px;
+    right: 20px;
+    width: 50px;
+    height: 30px;
+    z-index: 1030;
+    background-color: white;
+    border: 2px solid black;
+    opacity: 0;
+    display: none;
+    @include linear(300ms);
+
+    @include media-breakpoint-up(md) {
+        bottom: 35px;
+        right: 35px;
+        width: 60px;
+        height: 40px;
+    }
+
+    &:hover {
+        border-color: $secondary;
+        @include linear;
+    }
+}

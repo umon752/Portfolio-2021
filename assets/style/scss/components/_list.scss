@@ -1,0 +1,29 @@
+.list {
+    &__left {
+        border: 2px solid black;
+        // transform: translateY(1px);
+
+        @include media-breakpoint-up(lg) {
+            transform: translateX(1px);
+            border-left: none;
+        }
+        
+    }
+    &__right {
+        border: 2px solid black;
+        // transform: translateY(-1px);
+
+        @include media-breakpoint-up(lg) {
+            transform: translateX(-1px);
+            border-right: none;
+        }
+    }
+}
+
+.list__icon {
+    width: 10px;
+    height: 10px;
+    background-image: url("../../images/icon.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}

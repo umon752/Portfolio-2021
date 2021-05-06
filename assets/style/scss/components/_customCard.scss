@@ -1,0 +1,65 @@
+.customCard {
+    @include linear(250ms);
+    // transform: scale(1);
+
+    &:hover {
+        @include linear(250ms);
+        // transform: scale(0.9);
+        transform: translateY(10px);
+        color: black;
+    }
+
+    &:hover .customCard__img {
+        box-shadow: none;
+        width: 110%;
+        @include linear(250ms);
+    }
+
+    &:hover .customCard__mask {
+        opacity: 1;
+        // width: 100%;
+        // transform: scale(1.8) translateX(-50%) translateY(-50%);
+        // transform: translateX(0);
+        @include linear(250ms);
+    }
+
+    &:hover .customCard__mask__text {
+        transform: scale(1);
+        @include linear(250ms);
+    }
+
+    &__img {
+        @include linear(250ms);
+        @include img-cover(100%,300px,top);
+        box-shadow: 3px 3px 3px rgba(165, 165, 165, 0.3);
+
+        @include media-breakpoint-up(md) {
+            height: 350px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            height: 410px;
+        }
+    }
+
+    &__mask {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        // border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.3);
+        // transform: translateX(100%);
+        transform: translateX(-50%) translateY(-50%);
+        transform-origin: 0 0;
+        opacity: 0;
+        @include linear(250ms);
+    }
+
+    &__mask__text {
+        transform: scale(0);
+        opacity: .7;
+        @include linear(250ms);
+    }
+}

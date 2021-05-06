@@ -1,0 +1,40 @@
+*,
+*::before,
+*::after {
+    &:focus {
+        outline: none !important; /* 消除 Bootstrap 預設 */
+        box-shadow: none !important; /* 消除 Bootstrap 預設 */
+    }
+}
+
+body {
+    @include bg-material;
+    background-color: $primary;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    @include linear;
+    &:hover {
+        text-decoration: none;
+        @include linear;
+    }
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6,p {
+    margin-bottom: 0;
+    line-height: 1;
+}
+

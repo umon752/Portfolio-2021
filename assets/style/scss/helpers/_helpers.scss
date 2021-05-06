@@ -1,0 +1,41 @@
+@mixin text-hidden($width, $height, $url) {
+    white-space: nowrap;
+    overflow: hidden;
+    text-indent: 101%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: $width;
+    height: $height;
+    background-image: url($url);
+}
+
+@mixin linear($duration:200ms) {
+    transition: all linear $duration;
+}
+
+// @mixin ease-out {
+//     transition: ease-out 300ms;
+// }
+
+@mixin img-cover($width,$height,$position) {
+    width: $width;
+    height: $height;
+    object-fit: cover;
+    object-position: $position;
+}
+
+@mixin bg-cover($url, $height) {
+    background-image: url($url);
+    width: $height;
+    height: $height;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+@mixin bg-material {
+    background-image: url("../../images/material.png");
+    background-position: center center;
+    background-repeat: repeat;
+}
