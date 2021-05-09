@@ -11,11 +11,13 @@
 @import "./scss/components/btn";
 @import "./scss/components/titleIcon";
 @import "./scss/components/list";
-@import "./scss/components/completeStamp";
+@import "./scss/components/checkedStamp";
 @import "./scss/components/customCard";
 
 @import "./scss/layout/wrap";
 @import "./scss/layout/nav";
 @import "./scss/layout/footer";
 
-@import "./scss/layout/cover";
+// @import "./scss/layout/cover";
+@import "./scss/pages/cover";
+@import "./scss/pages/portfolio";

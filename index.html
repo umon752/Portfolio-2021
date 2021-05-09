@@ -9,10 +9,13 @@
     <link rel="shortcut icon" href="./assets/images/logo.svg" type="image/svg">
     <!-- Material Icon（CDN） -->
     <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+    <!-- Font Awesome（CDN） -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <!-- AOS（CDN） -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- Animate（CDN） -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> -->
     <!-- Swiper（CDN） -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <!-- Lax -->
@@ -27,6 +30,11 @@
 
 
     <div class="wrap">
+        <div class="wrap__lineTop"></div>
+        <div class="wrap__lineRight"></div>
+        <div class="wrap__lineBottom"></div>
+        <div class="wrap__lineLeft"></div>
+        <div class="overlay"></div>
         <!-- header -->
         <nav class="d-flex justify-content-between align-items-center fixed-top w-100 py-4 px-5 px-md-8 py-md-5">
             <h1>
@@ -37,32 +45,33 @@
                 <span class="navToggle__line"></span>
             </a>
             <!-- navSide -->
-            <div class="navSide p-4 p-md-6">
-                <!-- <div class="sticky-top"> -->
+            <div class="navSide p-5 p-md-6">
                 <div class="d-flex justify-content-between align-items-center mb-6 mb-md-8">
-                    <h4 class="navSide__title h3 h1-md d-inline">MENU</h4>
+                    <h4 class="navSide__title h3 h2-md d-inline">MENU</h4>
                     <a href="#" class="closeBtn"></a>
                 </div>
-                <ul class="pl-1">
+                <ul class="d-fle flex-column h-100 pl-1">
                     <li class="mb-5">
-                        <a href="#about-me" class="js-scrollAnimate navSide__link h6 h4-md hover-letterSpacing">
+                        <a href="#about-me" class="js-scrollAnimate navSide__link h6 h5-md hover-letterSpacing">
                             ABOUT ME
                         </a>
                     </li>
                     <li class="mb-5">
-                        <a href="#portfolio" class="js-scrollAnimate navSide__link h6 h4-md hover-letterSpacing">
+                        <a href="#portfolio" class="js-scrollAnimate navSide__link h6 h5-md hover-letterSpacing">
                             PORTFOLIO
                         </a>
                     </li>
                     <li class="mb-5">
-                        <a href="#contact" class="js-scrollAnimate navSide__link h6 h4-md hover-letterSpacing">
+                        <a href="#contact" class="js-scrollAnimate navSide__link h6 h5-md hover-letterSpacing">
                             CONTACT
                         </a>
                     </li>
                 </ul>
-                <!-- </div> -->
+
+
             </div>
         </nav>
+
 
         <!-- gotop -->
         <a href="#" class="goTop rounded-circle justify-content-center align-items-center h6 h5-md p-3 p-md-4">
@@ -71,8 +80,61 @@
 
         <!-- COVER -->
         <section class="w-100 vh-100 position-relative mb-4 mb-md-5 mb-xl-6">
-            <div class="cover container h-100 d-flex flex-column justify-content-center">
-                <div class="d-flex justify-content-end justify-content-md-between align-items-end">
+            <!-- <img src="./assets/images/bill.svg"> -->
+            <div class="cover container">
+                <div class="cover__head d-flex justify-content-between align-items-end py-2 py-md-4">
+                    <div class="js-year font-size-xs font-size-md-sm"></div>
+                    <div class=" font-size-xs font-size-md-sm font-weight-bold">CHECK LIST</div>
+                    <div class="js-date font-size-xs font-size-md-sm"></div>
+                </div>
+                <div class="cover__line"></div>
+                <div class="cover__body d-flex justify-content-between align-items-center py-6">
+                    <div>
+                        <h2 class="js-cover-title h4 h1-md font-size-lg-xl font-size-xl-xxl font-weight-bold mb-3">
+                            PORTFOLIO</h2>
+                        <h3 class="js-cover-subTitle h5 h1-md font-size-lg-lg font-size-xl-xl mb-9">
+                            I AM<span class="d-block mt-1 mt-lg-3">YI CHIEH LEE</span></h3>
+                        <div class="js-cover-passed font-size-sm h6-md position-relative">
+                            <a href="#" class="cover__body__icon d-flex align-items-center mb-1">
+                                <img class="cover__body__icon__img animation-rotate mr-1 mr-lg-2" src="./assets/images/icon.svg">
+                                <p class="cover__body__icon__text text-secondary font-size-xs font-size-md-sm">CLICK ME!</p>
+                            </a>
+                            <span class="ml-3 ml-md-5 ml-lg-0">PASSED：</span> 
+                        </div>
+                        
+                            
+                        <div class="cover__body__stamp position-relative">
+                            <div class="cover__body__stamp__wrap">
+                                <img src="./assets/images/stamp.svg">
+                                <div
+                                    class="cover__body__stamp__wrap__text text-center text-dark font-size-sm h6-md h5-lg h4-xl">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="position-relative">
+                        <div class="js-cover-code">
+                            <img class="cover__body__code bg-white shadow-sm p-2" src="./assets/images/code.png">
+                        </div>
+                        <div class="js-cover-sticker position-relative">
+                            <img class="cover__body__sticker shadow-sm" src="./assets/images/sticker.svg">
+                        </div>
+                        <div class="js-cover-semicircle1 position-relative">
+                            <img class="cover__body__semicircle1 mb-2 mb-md-4" src="./assets/images/semicircle.svg">
+                        </div>
+                        <div class="js-cover-semicircle2 position-relative">
+                            <img class="cover__body__semicircle2" src="./assets/images/semicircle.svg">
+                        </div>
+                    </div>
+                </div>
+                <div class="cover__line"></div>
+                <div class="cover__footer d-flex justify-content-between py-2 py-md-4">
+                    <div class="font-size-xs font-size-md-sm">DEVELOP BY 2021</div>
+                    <div class="font-size-xs font-size-md-sm">THANK YOU！</div>
+                </div>
+
+
+                <!-- <div class="d-flex justify-content-end justify-content-md-between align-items-end">
                     <h2
                         class="cover__title h1 font-size-lg-lg font-size-xl-xxl font-weight-bold d-none d-md-block mb-2 mb-lg-3">
                         PORTFOLIO
@@ -81,7 +143,6 @@
                         <div class="cover__stamp position-relative">
                             <img class="mr-4 mr-md-0" src="./assets/images/stamp.svg">
                             <div class="cover__stamp__text text-center text-dark font-size-sm h6-md h5-lg h4-xl">
-                                <!-- <p><span class="d-none d-md-block">DATE<br></span>04 / 29<br>- 2021 -</p> -->
                             </div>
                         </div>
                     </div>
@@ -93,292 +154,318 @@
                             <p class="cover__icon__text text-secondary font-size-xs font-size-md-sm">CLICK ME!</p>
                         </a>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="position-relative w-100">
+                <!-- <div class="position-relative w-100">
                     <div class="cover__line"></div>
-                </div>
+                </div> -->
 
-                <div class="d-flex flex-column flex-md-row justify-content-between">
+                <!-- <div class="d-flex flex-column flex-md-row justify-content-between">
                     <h2 class="cover__title h4 font-weight-bold d-md-none mt-3">
                         PORTFOLIO</h2>
-                    <h3 class="cover__subtitle h5 h2-md h1-lg font-size-xl-xl mt-2 mt-lg-3">
-                        I AM<span class="d-block mt-1 mt-lg-3">YI CHIEH LEE</span></h3>
+                    <div class="js-cover-subtitle">
+                        <h3 class="cover__subtitle h5 h2-md h1-lg font-size-xl-xl mt-2 mt-lg-3">
+                            I AM<span class="d-block mt-1 mt-lg-3">YI CHIEH LEE</span></h3>
+                        <div class="overflow-hidden mt-2">
+                            <p class="cover__marquee">PLEASE GIVE ME PASSED<br>PLEASE GIVE ME PASSED</p>
+                        </div>
+                    </div>
                     <div class="cover__filesBlock align-self-end mt-4 mt-md-5">
                         <img class="cover__ticket" src="./assets/images/ticket.svg">
                         <img class="cover__sticker" src="./assets/images/sticker.svg">
                     </div>
-                </div>
+                </div> -->
 
             </div>
         </section>
 
         <!-- ABOUT ME -->
-        <section id="about-me"
-            class="container-lg py-8 py-md-9 py-xl-10"
-            data-aos="fade-up">
+        <section id="about-me" class="container-lg py-8 py-md-9 py-xl-10" data-aos="fade-up">
             <div class="position-relative bg-white shadow-sm py-7 px-7 px-sm-9 px-xl-10">
-            <div class="completeStamp">
-                <img src="./assets/images/complete.svg">
-            </div>
-            <h3 class="h6 h5-md h2-lg d-flex justify-content-center align-items-center mb-5">
-                <span class="titleIcon mr-2"></span>
-                <span>ABOUT ME</span>
-            </h3>
-            <div class="list row mb-3">
-                <div class="list__left col-12 col-lg-6 px-0 mb-5 mb-lg-0">
-                    <h4 class="h6 h4-lg border-bottom text-center text-lg-left py-1 px-lg-5">DEVELOP</h4>
-                    <ul class="p-3 p-md-5">
-                        <li class="d-flex align-items-center font-size-sm h6-md mb-2"><span
-                                class="list__icon mr-2 mr-sm-3"></span> HTML / CSS / Scss / Bootstrap</li>
-                        <li class="d-flex align-items-center font-size-sm h6-md"><span
-                                class="list__icon mr-2 mr-sm-3"></span> jQuery / JavaScript / Vue</li>
-                    </ul>
+                <div class="checkedStamp">
+                    <img src="./assets/images/checked.svg">
                 </div>
-                <div class="list__right col-12 col-lg-6 px-0">
-                    <h4 class="h6 h4-lg border-bottom text-center text-lg-left py-1 px-lg-5">EXPERIENCE</h4>
-                    <ul class="p-3 p-md-5">
-                        <li class="d-flex align-items-center font-size-sm h6-md mb-2"><span
-                                class="list__icon mr-2 mr-sm-3"></span> 2013 — 2017 台南應用科技大學 / 視覺傳達設計系</li>
-                        <li class="d-flex align-items-center font-size-sm h6-md"><span
-                                class="list__icon mr-2 mr-sm-3"></span> 2018 — 2021 家裡蹲創意印刷公司 / 平面設計</li>
-                    </ul>
+                <h3 class="h6 h5-md h4-lg d-flex justify-content-center align-items-center mb-5">
+                    <span class="titleIcon mr-1 mr-md-2"></span>
+                    <span>ABOUT ME</span>
+                </h3>
+                <div class="list row mb-3">
+                    <div class="list__left col-12 col-lg-6 px-0 mb-5 mb-lg-0">
+                        <h4 class="h6 h5-lg border-bottom text-center text-lg-left py-1 px-lg-5">DEVELOP</h4>
+                        <ul class="p-3 p-md-5">
+                            <li class="d-flex align-items-center font-size-sm h6-md mb-2"><span
+                                    class="list__icon mr-2 mr-sm-3"></span> HTML / CSS / Scss / Bootstrap</li>
+                            <li class="d-flex align-items-center font-size-sm h6-md"><span
+                                    class="list__icon mr-2 mr-sm-3"></span> jQuery / JavaScript / Vue</li>
+                        </ul>
+                    </div>
+                    <div class="list__right col-12 col-lg-6 px-0">
+                        <h4 class="h6 h5-lg border-bottom text-center text-lg-left py-1 px-lg-5">EXPERIENCE</h4>
+                        <ul class="p-3 p-md-5">
+                            <li class="d-flex align-items-center font-size-sm h6-md mb-2"><span
+                                    class="list__icon mr-2 mr-sm-3"></span> 2013 — 2017 台南應用科技大學 / 視覺傳達設計系</li>
+                            <li class="d-flex align-items-center font-size-sm h6-md"><span
+                                    class="list__icon mr-2 mr-sm-3"></span> 2018 — 2021 家裡蹲創意印刷公司 / 平面設計</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
         </section>
 
         <!-- PORTFOLIO -->
         <section id="portfolio" class="container-lg py-8 py-md-9 py-xl-10">
             <div class="position-relative">
-            <div class="completeStamp">
-                <img src="./assets/images/complete.svg">
-            </div>
-            <h3 class="h6 h5-md h2-lg d-flex justify-content-center align-items-center mb-8 mb-md-9" data-aos="fade-up">
-                <span class="titleIcon mr-2"></span>
-                <span>PORTFOLIO</span>
-            </h3>
-            <!-- Swiper -->
-            <div class="swiper-container mySwiper mb-9">
-                <div class="position-absolute d-none d-md-block">
-                    <p
-                        class="h5 h1-md font-size-lg-lg font-size-xl-xl font-weight-bold d-flex align-items-center mb-2" data-aos="fade-right">
-                        PLEASE
-                        <img src="./assets/images/icon.svg" class="animation-rotate ml-5">
-                    </p>
-                    <p class="h6 h2-md h1-lg font-size-xl-lg mb-1" data-aos="fade-right" data-aos-delay="100">SCROLL</p>
-                    <p class="h6 h2-md h1-lg font-size-xl-lg mb-5" data-aos="fade-right" data-aos-delay="200">RIGHT</p>
-                    <img class="js-arrow" src="./assets/images/arrow.svg" data-aos="fade-left" data-aos-delay="300">
+                <div class="checkedStamp">
+                    <img src="./assets/images/checked.svg">
                 </div>
-                <ul class="swiper-wrapper d-flex mb-9">
-                    <li class="swiper-slide" data-aos="fade-up" data-aos-delay="100">
-                        <a href="#" class="customCard d-block">
-                            <div class="position-relative overflow-hidden w-100 h-100 mb-3">
-                                <div class="customCard__mask d-flex justify-content-center align-items-center">
+                <h3 class="h6 h5-md h4-lg d-flex justify-content-center align-items-center mb-8 mb-md-9"
+                    data-aos="fade-up">
+                    <span class="titleIcon mr-1 mr-md-2"></span>
+                    <span>PORTFOLIO</span>
+                </h3>
+                <!-- Swiper -->
+                <div class="swiper-container mySwiper mb-9">
+                    <div class="position-absolute d-none d-md-block">
+                        <p class="h5 h1-md font-size-lg-lg font-weight-bold d-flex align-items-center mb-2"
+                            data-aos="fade-right">
+                            PLEASE
+                            <img src="./assets/images/icon.svg" class="animation-rotate ml-4">
+                        </p>
+                        <p class="h6 h2-md h1-lg mb-1" data-aos="fade-right" data-aos-delay="100">SCROLL
+                        </p>
+                        <p class="h6 h2-md h1-lg mb-5" data-aos="fade-right" data-aos-delay="200">RIGHT
+                        </p>
+                        <img class="js-arrow" src="./assets/images/arrow.svg" data-aos="fade-left" data-aos-delay="300">
+                    </div>
+                    <ul class="swiper-wrapper d-flex mb-9">
+                        <li class="swiper-slide" data-aos="fade-up" data-aos-delay="100">
+                            <a href="#" class="customCard d-block">
+                                <div class="customCard__wrap position-relative overflow-hidden w-100 h-100 mb-3">
                                     <div
-                                        class="customCard__mask__text text-white h5 h3-md h2-lg font-weight-bold text-center">
-                                        DEMO
+                                        class="customCard__wrap__mask d-flex justify-content-center align-items-center">
+                                        <div
+                                            class="customCard__wrap__mask__text d-flex align-items-center text-white h5 h3-md text-center">
+                                            <i class="fas fa-link mr-1 mr-md-2"></i><span
+                                                class="font-weight-bold h5 h3-md">DEMO</span>
+                                        </div>
                                     </div>
+                                    <img src="./assets/images/EXHIBINECTION.jpg" class="customCard__wrap__img">
                                 </div>
-                                <img src="./assets/images/EXHIBINECTION.jpg" class="customCard__img">
-                            </div>
-                            <h4 class="font-size-sm h6-md">EXHIBINECTION</h4>
-                            <span class="bg-dark text-white font-size-xs font-size-md-sm px-1">Scss</span>
-                            <span class="bg-dark text-white font-size-xs font-size-md-sm px-1">Tailwind</span>
-                            <span class="bg-dark text-white font-size-xs font-size-md-sm px-1">JS</span>
-                            <span class="bg-dark text-white font-size-xs font-size-md-sm px-1">Anime</span>
-                            <span class="bg-dark text-white font-size-xs font-size-md-sm px-1">AOS</span>
-                        </a>
-                    </li>
-                    <li class="swiper-slide" data-aos="fade-up" data-aos-delay="200">
-                        <a href="#" class="customCard d-block">
-                            <div class="position-relative overflow-hidden w-100 h-100 mb-3">
-                                <div class="customCard__mask d-flex justify-content-center align-items-center">
+                                <h4 class="font-size-sm h6-md">EXHIBINECTION</h4>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Scss</span>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Tailwind</span>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">JS</span>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Anime</span>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">AOS</span>
+                            </a>
+                        </li>
+                        <li class="swiper-slide" data-aos="fade-up" data-aos-delay="200">
+                            <a href="#" class="customCard d-block">
+                                <div class="customCard__wrap position-relative overflow-hidden w-100 h-100 mb-3">
                                     <div
-                                        class="customCard__mask__text text-white h5 h3-md h2-lg font-weight-bold text-center">
-                                        DEMO
+                                        class="customCard__wrap__mask d-flex justify-content-center align-items-center">
+                                        <div
+                                            class="customCard__wrap__mask__text d-flex align-items-center text-white h5 h3-md text-center">
+                                            <i class="fas fa-link mr-1 mr-md-2"></i><span
+                                                class="font-weight-bold h5 h3-md">DEMO</span>
+                                        </div>
                                     </div>
+                                    <img src="./assets/images/ALOHA.jpg" class="customCard__wrap__img">
                                 </div>
-                                <img src="./assets/images/ALOHA.jpg" class="customCard__img">
-                            </div>
-                            <h4 class="font-size-sm h6-md">ALOHA</h4>
-                            <span class="bg-dark text-white font-size-xs font-size-md-sm px-1">Scss</span>
-                            <span class="bg-dark text-white font-size-xs font-size-md-sm px-1">Bootstrap</span>
-                            <span class="bg-dark text-white font-size-xs font-size-md-sm px-1">JS</span>
-                            <span class="bg-dark text-white font-size-xs font-size-md-sm px-1">Anime</span>
-                            <span class="bg-dark text-white font-size-xs font-size-md-sm px-1">AOS</span>
-                        </a>
-                    </li>
-                    <li class="swiper-slide" data-aos="fade-up" data-aos-delay="300">
-                        <a href="#" class="customCard d-block">
-                            <div class="position-relative overflow-hidden w-100 h-100 mb-3">
-                                <div class="customCard__mask d-flex justify-content-center align-items-center">
+                                <h4 class="font-size-sm h6-md">ALOHA</h4>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Scss</span>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Bootstrap</span>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">JS</span>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Anime</span>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">AOS</span>
+                            </a>
+                        </li>
+                        <li class="swiper-slide" data-aos="fade-up" data-aos-delay="300">
+                            <a href="#" class="customCard d-block">
+                                <div class="customCard__wrap position-relative overflow-hidden w-100 h-100 mb-3">
                                     <div
-                                        class="customCard__mask__text text-white h5 h3-md h2-lg font-weight-bold text-center">
-                                        DEMO
+                                        class="customCard__wrap__mask d-flex justify-content-center align-items-center">
+                                        <div
+                                            class="customCard__wrap__mask__text d-flex align-items-center text-white h5 h3-md text-center">
+                                            <i class="fas fa-link mr-1 mr-md-2"></i><span
+                                                class="font-weight-bold h5 h3-md">DEMO</span>
+                                        </div>
                                     </div>
+                                    <img src="./assets/images/Fixie.jpg" class="customCard__wrap__img">
                                 </div>
-                                <img src="./assets/images/Fixie.jpg" class="customCard__img">
-                            </div>
-                            <h4 class="font-size-sm h6-md">Fixie</h4>
-                            <span class="bg-dark text-white font-size-xs font-size-md-sm px-1">Scss</span>
-                            <span class="bg-dark text-white font-size-xs font-size-md-sm px-1">Bootstrap</span>
-                            <span class="bg-dark text-white font-size-xs font-size-md-sm px-1">jQuery</span>
-                            <span class="bg-dark text-white font-size-xs font-size-md-sm px-1">AOS</span>
-                        </a>
-                    </li>
-                    <li class="swiper-slide" data-aos="fade-up" data-aos-delay="400">
-                        <a href="#" class="customCard d-block">
-                            <div class="position-relative overflow-hidden w-100 h-100 mb-3">
-                                <div class="customCard__mask d-flex justify-content-center align-items-center">
+                                <h4 class="font-size-sm h6-md">Fixie</h4>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Scss</span>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Bootstrap</span>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">jQuery</span>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">AOS</span>
+                            </a>
+                        </li>
+                        <li class="swiper-slide" data-aos="fade-up" data-aos-delay="400">
+                            <a href="#" class="customCard d-block">
+                                <div class="customCard__wrap position-relative overflow-hidden w-100 h-100 mb-3">
                                     <div
-                                        class="customCard__mask__text text-white h5 h3-md h2-lg font-weight-bold text-center">
-                                        DEMO
+                                        class="customCard__wrap__mask d-flex justify-content-center align-items-center">
+                                        <div
+                                            class="customCard__wrap__mask__text d-flex align-items-center text-white h5 h3-md text-center">
+                                            <i class="fas fa-link mr-1 mr-md-2"></i><span
+                                                class="font-weight-bold h5 h3-md">DEMO</span>
+                                        </div>
                                     </div>
+                                    <img src="./assets/images/Jewellery.jpg" class="customCard__wrap__img">
                                 </div>
-                                <img src="./assets/images/Jewellery.jpg" class="customCard__img">
-                            </div>
-                            <h4 class="font-size-sm h6-md">Jewellery</h4>
-                            <span class="bg-dark text-white font-size-xs font-size-md-sm px-1">Scss</span>
-                            <span class="bg-dark text-white font-size-xs font-size-md-sm px-1">Bootstrap</span>
-                            <span class="bg-dark text-white font-size-xs font-size-md-sm px-1">JS</span>
-                            <span class="bg-dark text-white font-size-xs font-size-md-sm px-1">Anime</span>
-                            <span class="bg-dark text-white font-size-xs font-size-md-sm px-1">AOS</span>
-                        </a>
-                    </li>
-                    <li class="swiper-slide" data-aos="fade-up" data-aos-delay="500">
-                        <a href="#" class="customCard d-block">
-                            <div class="position-relative overflow-hidden w-100 h-100 mb-3">
-                                <div class="customCard__mask d-flex justify-content-center align-items-center">
+                                <h4 class="font-size-sm h6-md">Jewellery</h4>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Scss</span>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Bootstrap</span>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">JS</span>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Anime</span>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">AOS</span>
+                            </a>
+                        </li>
+                        <li class="swiper-slide" data-aos="fade-up" data-aos-delay="500">
+                            <a href="#" class="customCard d-block">
+                                <div class="customCard__wrap position-relative overflow-hidden w-100 h-100 mb-3">
                                     <div
-                                        class="customCard__mask__text text-white h5 h3-md h2-lg font-weight-bold text-center">
-                                        DEMO
+                                        class="customCard__wrap__mask d-flex justify-content-center align-items-center">
+                                        <div
+                                            class="customCard__wrap__mask__text d-flex align-items-center text-white h5 h3-md text-center">
+                                            <i class="fas fa-link mr-1 mr-md-2"></i><span
+                                                class="font-weight-bold h5 h3-md">DEMO</span>
+                                        </div>
                                     </div>
+                                    <img src="./assets/images/HomeStudio.jpg" class="customCard__wrap__img">
                                 </div>
-                                <img src="./assets/images/HomeStudio.jpg" class="customCard__img">
-                            </div>
-                            <h4 class="font-size-sm h6-md">HomeStudio</h4>
-                            <span class="bg-dark text-white font-size-xs font-size-md-sm px-1">Scss</span>
-                            <span class="bg-dark text-white font-size-xs font-size-md-sm px-1">JS</span>
-                            <span class="bg-dark text-white font-size-xs font-size-md-sm px-1">Anime</span>
-                            <span class="bg-dark text-white font-size-xs font-size-md-sm px-1">AOS</span>
-                        </a>
-                    </li>
-                    <li class="swiper-slide" data-aos="fade-up" data-aos-delay="600">
-                        <a href="#" class="customCard d-block">
-                            <div class="position-relative overflow-hidden w-100 h-100 mb-3">
-                                <div class="customCard__mask d-flex justify-content-center align-items-center">
+                                <h4 class="font-size-sm h6-md">HomeStudio</h4>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Scss</span>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">JS</span>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Anime</span>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">AOS</span>
+                            </a>
+                        </li>
+                        <li class="swiper-slide" data-aos="fade-up" data-aos-delay="600">
+                            <a href="#" class="customCard d-block">
+                                <div class="customCard__wrap position-relative overflow-hidden w-100 h-100 mb-3">
                                     <div
-                                        class="customCard__mask__text text-white h5 h3-md h2-lg font-weight-bold text-center">
-                                        DEMO
+                                        class="customCard__wrap__mask d-flex justify-content-center align-items-center">
+                                        <div
+                                            class="customCard__wrap__mask__text d-flex align-items-center text-white h5 h3-md text-center">
+                                            <i class="fas fa-link mr-1 mr-md-2"></i><span
+                                                class="font-weight-bold h5 h3-md">DEMO</span>
+                                        </div>
                                     </div>
+                                    <img src="./assets/images/PlantRoom.jpg" class="customCard__wrap__img">
                                 </div>
-                                <img src="./assets/images/PlantRoom.jpg" class="customCard__img">
-                            </div>
-                            <h4 class="font-size-sm h6-md">PlantRoom</h4>
-                            <span class="bg-dark text-white font-size-xs font-size-md-sm px-1">Scss</span>
-                            <span class="bg-dark text-white font-size-xs font-size-md-sm px-1">Bootstrap</span>
-                            <span class="bg-dark text-white font-size-xs font-size-md-sm px-1">JS</span>
-                            <span class="bg-dark text-white font-size-xs font-size-md-sm px-1">Anime</span>
-                        </a>
-                    </li>
-                    <li class="swiper-slide" data-aos="fade-up" data-aos-delay="700">
-                        <a href="#" class="customCard d-block">
-                            <div class="position-relative overflow-hidden w-100 h-100 mb-3">
-                                <div class="customCard__mask d-flex justify-content-center align-items-center">
+                                <h4 class="font-size-sm h6-md">PlantRoom</h4>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Scss</span>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Bootstrap</span>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">JS</span>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Anime</span>
+                            </a>
+                        </li>
+                        <li class="swiper-slide" data-aos="fade-up" data-aos-delay="700">
+                            <a href="#" class="customCard d-block">
+                                <div class="customCard__wrap position-relative overflow-hidden w-100 h-100 mb-3">
                                     <div
-                                        class="customCard__mask__text text-white h5 h3-md h2-lg font-weight-bold text-center">
-                                        DEMO
+                                        class="customCard__wrap__mask d-flex justify-content-center align-items-center">
+                                        <div
+                                            class="customCard__wrap__mask__text d-flex align-items-center text-white h5 h3-md text-center">
+                                            <i class="fas fa-link mr-1 mr-md-2"></i><span
+                                                class="font-weight-bold h5 h3-md">DEMO</span>
+                                        </div>
                                     </div>
+                                    <img src="./assets/images/WOWOROOM.jpg" class="customCard__wrap__img">
                                 </div>
-                                <img src="./assets/images/WOWOROOM.jpg" class="customCard__img">
-                            </div>
-                            <h4 class="font-size-sm h6-md">WOWOROOM - 前台</h4>
-                            <span class="bg-dark text-white font-size-xs font-size-md-sm px-1">Scss</span>
-                            <span class="bg-dark text-white font-size-xs font-size-md-sm px-1">Bootstrap</span>
-                            <span class="bg-dark text-white font-size-xs font-size-md-sm px-1">JS</span>
-                            <span class="bg-dark text-white font-size-xs font-size-md-sm px-1">Anime</span>
-                            <span class="bg-dark text-white font-size-xs font-size-md-sm px-1">AOS</span>
-                        </a>
-                    </li>
-                    <li class="swiper-slide" data-aos="fade-up" data-aos-delay="800">
-                        <a href="#" class="customCard d-block">
-                            <div class="position-relative overflow-hidden w-100 h-100 mb-3">
-                                <div class="customCard__mask d-flex justify-content-center align-items-center">
+                                <h4 class="font-size-sm h6-md">WOWOROOM - 前台</h4>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Scss</span>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Bootstrap</span>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">JS</span>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Anime</span>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">AOS</span>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">AJAX</span>
+                            </a>
+                        </li>
+                        <li class="swiper-slide" data-aos="fade-up" data-aos-delay="800">
+                            <a href="#" class="customCard d-block">
+                                <div class="customCard__wrap position-relative overflow-hidden w-100 h-100 mb-3">
                                     <div
-                                        class="customCard__mask__text text-white h5 h3-md h2-lg font-weight-bold text-center">
-                                        DEMO
+                                        class="customCard__wrap__mask d-flex justify-content-center align-items-center">
+                                        <div
+                                            class="customCard__wrap__mask__text d-flex align-items-center text-white h5 h3-md text-center">
+                                            <i class="fas fa-link mr-1 mr-md-2"></i><span
+                                                class="font-weight-bold h5 h3-md">DEMO</span>
+                                        </div>
                                     </div>
+                                    <img src="./assets/images/WOWOROOM_admin.jpg" class="customCard__wrap__img">
                                 </div>
-                                <img src="./assets/images/WOWOROOM_admin.jpg" class="customCard__img">
-                            </div>
-                            <h4 class="font-size-sm h6-md">WOWOROOM - 後台</h4>
-                            <span class="bg-dark text-white font-size-xs font-size-md-sm px-1">Scss</span>
-                            <span class="bg-dark text-white font-size-xs font-size-md-sm px-1">Bootstrap</span>
-                            <span class="bg-dark text-white font-size-xs font-size-md-sm px-1">JS</span>
-                            <span class="bg-dark text-white font-size-xs font-size-md-sm px-1">Anime</span>
-                            <span class="bg-dark text-white font-size-xs font-size-md-sm px-1">AOS</span>
-                        </a>
-                    </li>
-                    <li class="swiper-slide" data-aos="fade-up" data-aos-delay="900">
-                        <a href="#" class="customCard d-block">
-                            <div class="position-relative overflow-hidden w-100 h-100 mb-3">
-                                <div class="customCard__mask d-flex justify-content-center align-items-center">
+                                <h4 class="font-size-sm h6-md">WOWOROOM - 後台</h4>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Scss</span>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Bootstrap</span>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">JS</span>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Anime</span>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">AOS</span>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">AJAX</span>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">C3</span>
+                            </a>
+                        </li>
+                        <li class="swiper-slide" data-aos="fade-up" data-aos-delay="900">
+                            <a href="#" class="customCard d-block">
+                                <div class="customCard__wrap position-relative overflow-hidden w-100 h-100 mb-3">
                                     <div
-                                        class="customCard__mask__text text-white h5 h3-md h2-lg font-weight-bold text-center">
-                                        DEMO
+                                        class="customCard__wrap__mask d-flex justify-content-center align-items-center">
+                                        <div
+                                            class="customCard__wrap__mask__text d-flex align-items-center text-white h5 h3-md text-center">
+                                            <i class="fas fa-link mr-1 mr-md-2"></i><span
+                                                class="font-weight-bold h5 h3-md">DEMO</span>
+                                        </div>
                                     </div>
+                                    <img src="./assets/images/MaskMap.jpg" class="customCard__wrap__img">
                                 </div>
-                                <img src="./assets/images/MaskMap.jpg" class="customCard__img">
-                            </div>
-                            <h4 class="font-size-sm h6-md">MaskMap</h4>
-                            <span class="bg-dark text-white font-size-xs font-size-md-sm px-1">Scss</span>
-                            <span class="bg-dark text-white font-size-xs font-size-md-sm px-1">JS</span>
-                        </a>
-                    </li>
-                </ul>
-                <div class="swiper-scrollbar"></div>
+                                <h4 class="font-size-sm h6-md">MaskMap</h4>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Scss</span>
+                                <span class="bg-dark text-white font-size-xs font-size-md-sm px-1">JS</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="swiper-scrollbar"></div>
+                </div>
+                <div class="text-center" data-aos="fade-up">
+                    <a href="./portfolio.html"
+                        class="position-relative d-inline-block rounded-0 button-telesto font-size-sm h6-md px-3 py-2 px-md-4"><span><span>SEE
+                                MORE</span></span></a>
+                </div>
             </div>
-            <div class="text-center">
-                <!-- <a href="#" class="btn btn-secondary rounded-0">SEE MORE</a> -->
-                <button class="position-relative d-inline-block rounded-0 button-telesto font-size-sm h6-md px-3 py-2 py-md-3 px-md-5"><span><span>SEE MORE</span></span></button>
-            </div>
-        </div>
         </section>
 
         <!-- CONTACT -->
-        <section id="contact"
-            class="container-lg py-8 py-md-9 py-xl-10 mb-8 mb-md-9 mb-xl-10"
-            data-aos="fade-up">
+        <section id="contact" class="container-lg py-8 py-md-9 py-xl-10 mb-8 mb-md-9 mb-xl-10" data-aos="fade-up">
             <div class="position-relative bg-white shadow-sm py-7 px-7 px-sm-9 px-xl-10">
-            <div class="completeStamp">
-                <img src="./assets/images/complete.svg">
-            </div>
-            <h3 class="h6 h5-md h2-lg d-flex justify-content-center align-items-center mb-5">
-                <span class="titleIcon mr-2"></span>
-                <span>CONTACT</span>
-            </h3>
-            <div class="list row mb-3">
-                <div class="list__left col-12 col-lg-6 px-0 mb-5 mb-lg-0">
-                    <h4 class="h6 h4-lg border-bottom text-center text-lg-left py-1 px-lg-5">DEVELOP</h4>
-                    <ul class="p-3 p-md-5">
-                        <li class="d-flex align-items-center font-size-sm h6-md mb-2"><span
-                                class="list__icon mr-2 mr-sm-3"></span> HTML / CSS / Scss / Bootstrap</li>
-                        <li class="d-flex align-items-center font-size-sm h6-md"><span
-                                class="list__icon mr-2 mr-sm-3"></span> jQuery / JavaScript / Vue</li>
-                    </ul>
+                <div class="checkedStamp">
+                    <img src="./assets/images/checked.svg">
                 </div>
-                <div class="list__right col-12 col-lg-6 px-0">
-                    <h4 class="h6 h4-lg border-bottom text-center text-lg-left py-1 px-lg-5">EXPERIENCE</h4>
-                    <ul class="p-3 p-md-5">
-                        <li class="d-flex align-items-center font-size-sm h6-md mb-2"><span
-                                class="list__icon mr-2 mr-sm-3"></span> 2013 — 2017 台南應用科技大學 / 視覺傳達設計系</li>
-                        <li class="d-flex align-items-center font-size-sm h6-md"><span
-                                class="list__icon mr-2 mr-sm-3"></span> 2018 — 2021 家裡蹲創意印刷公司 / 平面設計</li>
-                    </ul>
+                <h3 class="h6 h5-md h4-lg d-flex justify-content-center align-items-center mb-5">
+                    <span class="titleIcon mr-1 mr-md-2"></span>
+                    <span>CONTACT</span>
+                </h3>
+                <div class="list row mb-3">
+                    <div class="list__left col-12 col-lg-6 px-0 mb-5 mb-lg-0">
+                        <h4 class="h6 h5-lg border-bottom text-center text-lg-left py-1 px-lg-5">DEVELOP</h4>
+                        <ul class="p-3 p-md-5">
+                            <li class="d-flex align-items-center font-size-sm h6-md mb-2"><span
+                                    class="list__icon mr-2 mr-sm-3"></span> HTML / CSS / Scss / Bootstrap</li>
+                            <li class="d-flex align-items-center font-size-sm h6-md"><span
+                                    class="list__icon mr-2 mr-sm-3"></span> jQuery / JavaScript / Vue</li>
+                        </ul>
+                    </div>
+                    <div class="list__right col-12 col-lg-6 px-0">
+                        <h4 class="h6 h5-lg border-bottom text-center text-lg-left py-1 px-lg-5">EXPERIENCE</h4>
+                        <ul class="p-3 p-md-5">
+                            <li class="d-flex align-items-center font-size-sm h6-md mb-2"><span
+                                    class="list__icon mr-2 mr-sm-3"></span> 2013 — 2017 台南應用科技大學 / 視覺傳達設計系</li>
+                            <li class="d-flex align-items-center font-size-sm h6-md"><span
+                                    class="list__icon mr-2 mr-sm-3"></span> 2018 — 2021 家裡蹲創意印刷公司 / 平面設計</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
         </section>
 
         <!-- footer -->
@@ -393,6 +480,11 @@
                 <li>
                     <a href="#contact" class="js-scrollAnimate footerLink font-size-sm h5-md px-md-7">Contact</a>
                 </li>
+                <li class="d-flex align-items-center">
+                    <a href="https://www.behance.net/umon7523ce3" class="footerLink h5 px-md-7" target="_blank">
+                        <i class="fab fa-behance py-1"></i>
+                    </a>
+                </li>
             </ul>
             <p class="font-size-sm bg-white text-md-center border-top border-light px-4 py-2 py-md-3">©2021 Copyright.
                 All Rights Reserved.<span class="d-block d-md-inline mt-1 mt-md-0">Develop by Yi Chieh Lee</span></p>
@@ -406,9 +498,9 @@
     <!-- <div class="mask">
         <span></span><span></span><span></span><span></span><span></span><span></span>
     </div> -->
-        <!-- cursor -->
-        <div class="cursorFront d-none d-xl-block"></div>
-        <div class="cursorBack d-none d-xl-block"></div>
+    <!-- cursor -->
+    <div class="cursorFront"></div>
+    <div class="cursorBack"></div>
 
 
     <!-- Anime（CDN） -->
@@ -421,6 +513,8 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <!-- jQuery -->
     <script src="./assets/js/vendors/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap -->
+    <!-- <script src="./assets/js/vendors/bootstrap.min.js"></script> -->
     <!-- <script src="./assets/js/vendors/jquery.js"></script> -->
     <!-- Scrollme -->
     <!-- <script src="./assets/js/vendors/jquery.scrollme.min.js"></script> -->

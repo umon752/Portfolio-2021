@@ -9,13 +9,17 @@
         color: black;
     }
 
-    &:hover .customCard__img {
+    &:hover .customCard__wrap {
         box-shadow: none;
+        @include linear(250ms);
+    }
+
+    &:hover .customCard__wrap__img {
         width: 110%;
         @include linear(250ms);
     }
 
-    &:hover .customCard__mask {
+    &:hover .customCard__wrap__mask {
         opacity: 1;
         // width: 100%;
         // transform: scale(1.8) translateX(-50%) translateY(-50%);
@@ -23,15 +27,19 @@
         @include linear(250ms);
     }
 
-    &:hover .customCard__mask__text {
+    &:hover .customCard__wrap__mask__text {
         transform: scale(1);
         @include linear(250ms);
     }
 
-    &__img {
+    &__wrap {
+        box-shadow: 3px 3px 3px rgba(119, 119, 119, 0.2);
+        @include linear(250ms);
+    }
+
+    &__wrap__img {
         @include linear(250ms);
         @include img-cover(100%,300px,top);
-        box-shadow: 3px 3px 3px rgba(165, 165, 165, 0.3);
 
         @include media-breakpoint-up(md) {
             height: 350px;
@@ -42,7 +50,7 @@
         }
     }
 
-    &__mask {
+    &__wrap__mask {
         width: 100%;
         height: 100%;
         position: absolute;
@@ -57,7 +65,7 @@
         @include linear(250ms);
     }
 
-    &__mask__text {
+    &__wrap__mask__text {
         transform: scale(0);
         opacity: .7;
         @include linear(250ms);

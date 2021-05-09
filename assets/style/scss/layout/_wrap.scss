@@ -1,6 +1,6 @@
 .wrap {
     margin: 10px;
-    border: 2px solid $black;
+    // border: 2px solid $black;
     overflow: hidden;
     position: relative;
     min-height: 100vh;
@@ -8,5 +8,41 @@
 
     @include media-breakpoint-up(md) {
         margin: 15px;
+    }
+
+    &__lineTop {
+        width: 100%;
+        height: 2px;
+        background-color: black;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    &__lineRight {
+        width: 2px;
+        height: 100%;
+        background-color: black;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    &__lineBottom {
+        width: 100%;
+        height: 2px;
+        background-color: black;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+
+    &__lineLeft {
+        width: 2px;
+        height: 100%;
+        background-color: black;
+        position: absolute;
+        bottom: 0;
+        left: 0;
     }
 }

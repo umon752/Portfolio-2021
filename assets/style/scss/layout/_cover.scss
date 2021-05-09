@@ -21,7 +21,7 @@
 
         @include media-breakpoint-up(xl) {
             transform: translateX(30%) translateY(30%);
-            width: 300px;
+            width: 250px;
         }
     }
 
@@ -57,7 +57,7 @@
         }
 
         @include media-breakpoint-up(lg) {
-            height: 400px;
+            height: 350px;
         }
 
         &.active {
@@ -122,7 +122,7 @@
 
         @include media-breakpoint-up(lg) {
             width: auto;
-            height: 350px;
+            height: 300px;
         }
     }
 
@@ -139,7 +139,7 @@
         }
 
         @include media-breakpoint-up(lg) {
-            width: 270px;
+            width: 240px;
         }
     }
 
@@ -152,6 +152,16 @@
         background-color: black;
         transform: translate(-50%);
         z-index: -1;
+    }
+
+    &__marquee {
+        height: 12px;
+        font-size: $font-size-xs;
+
+        @include media-breakpoint-up(md) {
+            height: 16px;
+            font-size: $h6;
+        }
     }
 }
 

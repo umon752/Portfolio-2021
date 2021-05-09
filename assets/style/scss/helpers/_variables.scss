@@ -70,7 +70,7 @@ $success:       $green !default;
 $info:          $cyan !default;
 $warning:       $yellow !default;
 $danger:        $red !default;
-$light:         #bebebe; // $gray-100 !default;
+$light:         #a1a1a1; // $gray-100 !default;
 $dark:          #666666; // $gray-800 !default;
 
 $theme-colors: () !default;
@@ -204,7 +204,7 @@ $grid-breakpoints: (
   md: 768px,
   lg: 992px,
   xl: 1200px,
-  xxl: 1580px
+  xxl: 1380px
 ) !default;
 
 @include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
@@ -220,7 +220,7 @@ $container-max-widths: (
   md: 720px,
   lg: 960px,
   xl: 1140px,
-  xxl: 1380px
+  xxl: 1280px
 ) !default;
 
 @include _assert-ascending($container-max-widths, "$container-max-widths");
@@ -293,8 +293,8 @@ $font-family-base:            $font-family-sans-serif !default;
 // stylelint-enable value-keyword-case
 
 $font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
-$font-size-xxl:               80px;
-$font-size-xl:                74px;
+$font-size-xxl:               76px;
+$font-size-xl:                70px;
 $font-size-lg:                $font-size-base * 3.625;// $font-size-base * 1.25 !default; // 58px
 $font-size-sm:                $font-size-base * .875 !default; // 14px
 $font-size-xs:                12px; // 12px
@@ -738,8 +738,8 @@ $nav-tabs-link-active-bg:           $body-bg !default;
 $nav-tabs-link-active-border-color: $gray-300 $gray-300 $nav-tabs-link-active-bg !default;
 
 $nav-pills-border-radius:           $border-radius !default;
-$nav-pills-link-active-color:       $component-active-color !default;
-$nav-pills-link-active-bg:          $component-active-bg !default;
+$nav-pills-link-active-color:       $secondary; // $component-active-color !default;
+$nav-pills-link-active-bg:          transparent; // $component-active-bg !default;
 
 $nav-divider-color:                 $gray-200 !default;
 $nav-divider-margin-y:              $spacer / 2 !default;
