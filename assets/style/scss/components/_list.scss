@@ -1,7 +1,6 @@
 .list {
     &__left {
         border: 2px solid black;
-        // transform: translateY(1px);
 
         @include media-breakpoint-up(lg) {
             transform: translateX(1px);
@@ -11,7 +10,6 @@
     }
     &__right {
         border: 2px solid black;
-        // transform: translateY(-1px);
 
         @include media-breakpoint-up(lg) {
             transform: translateX(-1px);

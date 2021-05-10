@@ -12,93 +12,69 @@
         integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <!-- AOS（CDN） -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <!-- Animate（CDN） -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> -->
-    <!-- Swiper（CDN） -->
-    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> -->
-    <!-- Lax -->
-    <!-- <script src="./assets/js/vendors/lax.min.js"></script> -->
     <link rel="stylesheet" href="./assets/style/css/all.css">
 </head>
 
 <body>
-    <!-- loading -->
+    <!-- Loading -->
 
-
-
-
+    <!-- Wrap -->
     <div class="wrap">
-        <div class="overlay"></div>
-        <!-- header -->
+        <div class="wrap__lineTop"></div>
+        <div class="wrap__lineRight"></div>
+        <div class="wrap__lineBottom"></div>
+        <div class="wrap__lineLeft"></div>
+
+        <!-- Cursor -->
+        <div class="cursorFront d-none d-xl-block"></div>
+        <div class="cursorBack d-none d-xl-block"></div>
+
+        <!-- Nav -->
         <nav class="d-flex justify-content-between align-items-center fixed-top w-100 py-4 px-5 px-md-8 py-md-5">
             <h1>
                 <a href="./index.html" class="logo d-block">
                 </a>
             </h1>
-            <!-- <a href="#" class="navToggle d-block">
-                <span class="navToggle__line"></span>
-            </a> -->
-            <!-- navSide -->
-            <!-- <div class="navSide p-5 p-md-6">
-                <div class="d-flex justify-content-between align-items-center mb-6 mb-md-8">
-                    <h4 class="navSide__title h3 h2-md d-inline">MENU</h4>
-                    <a href="#" class="closeBtn"></a>
-                </div>
-                <ul class="d-fle flex-column h-100 pl-1">
-                    <li class="mb-5">
-                        <a href="#about-me" class="js-scrollAnimate navSide__link h6 h5-md hover-letterSpacing">
-                            ABOUT ME
-                        </a>
-                    </li>
-                    <li class="mb-5">
-                        <a href="#portfolio" class="js-scrollAnimate navSide__link h6 h5-md hover-letterSpacing">
-                            PORTFOLIO
-                        </a>
-                    </li>
-                    <li class="mb-5">
-                        <a href="#contact" class="js-scrollAnimate navSide__link h6 h5-md hover-letterSpacing">
-                            CONTACT
-                        </a>
-                    </li>
-                </ul>
-
-
-            </div> -->
         </nav>
 
-        <!-- gotop -->
+        <!-- Gotop -->
         <a href="#" class="goTop rounded-circle justify-content-center align-items-center h6 h5-md p-3 p-md-4">
             TOP
         </a>
 
-        <!-- content -->
+        <!-- Content -->
         <section class="container-lg py-8">
             <h3 class="h6 h5-md h4-lg d-flex justify-content-center align-items-center mb-8 mb-md-9" data-aos="fade-up">
                 <span class="titleIcon mr-1 mr-md-2"></span>
                 <span>PORTFOLIO</span>
             </h3>
 
-            <ul class="nav nav-pills border-bottom pb-2 mb-3" id="pills-tab" role="tablist">
+            <ul class="nav nav-pills border-bottom pb-2 mb-3" id="pills-tab" role="tablist" data-aos="fade-up">
                 <li class="nav-item border-right" role="presentation">
-                    <a class="nav-link active py-0" id="pills-portfolio-tab" data-toggle="pill" href="#pills-portfolio"
-                        role="tab" aria-controls="pills-portfolio" aria-selected="true">PORTFOLIO</a>
+                    <a class="nav-link font-size-sm h6-md active p-0 pr-4 pr-md-5" id="pills-portfolio-tab"
+                        data-toggle="pill" href="#pills-portfolio" role="tab" aria-controls="pills-portfolio"
+                        aria-selected="true">PORTFOLIO</a>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link py-0" id="pills-practice-tab" data-toggle="pill" href="#pills-practice"
-                        role="tab" aria-controls="pills-practice" aria-selected="false">PRACTICE</a>
+                    <a class="nav-link font-size-sm h6-md p-0 pl-4 pl-md-5" id="pills-practice-tab" data-toggle="pill"
+                        href="#pills-practice" role="tab" aria-controls="pills-practice"
+                        aria-selected="false">PRACTICE</a>
                 </li>
             </ul>
             <div class="tab-content" id="pills-tabContent">
-                <div class="tab-pane fade show active" id="pills-portfolio" role="tabpanel"
+                <div class="tab-pane fade show position-relative active" id="pills-portfolio" role="tabpanel"
                     aria-labelledby="pills-portfolio-tab">
                     <ul class="row py-2 py-md-4">
-                        <li class="col-6 col-lg-4 col-xl-3 mb-5 mb-md-8">
-                            <a href="#" class="customCard d-block px-md-3 px-xl-0">
+                        <li class="col-6 col-lg-4 col-xl-3 mb-5 mb-md-8" data-aos="fade-up" data-aos-delay="100">
+                            <a href="https://umon752.github.io/EXHIBINECTION/"
+                                class="customCard d-block px-md-3 px-xl-0" target="_blank">
                                 <div class="customCard__wrap position-relative overflow-hidden w-100 h-100 mb-3">
-                                    <div class="customCard__wrap__mask d-flex justify-content-center align-items-center">
+                                    <div
+                                        class="customCard__wrap__mask d-flex justify-content-center align-items-center">
                                         <div
                                             class="customCard__wrap__mask__text d-flex align-items-center text-white font-size-sm h4-md text-center">
-                                            <i class="fas fa-link mr-1 mr-md-2"></i><span class="font-weight-bold font-size-sm h4-md">DEMO</span>
+                                            <i class="fas fa-link mr-1 mr-md-2"></i><span
+                                                class="font-weight-bold font-size-sm h4-md">DEMO</span>
                                         </div>
                                     </div>
                                     <img src="./assets/images/EXHIBINECTION.jpg" class="portfolioImg">
@@ -113,13 +89,16 @@
                                 </div>
                             </a>
                         </li>
-                        <li class="col-6 col-lg-4 col-xl-3 mb-5 mb-md-8">
-                            <a href="#" class="customCard d-block px-md-3 px-xl-0">
+                        <li class="col-6 col-lg-4 col-xl-3 mb-5 mb-md-8" data-aos="fade-up" data-aos-delay="200">
+                            <a href="https://umon752.github.io/week8_ALOHA/" class="customCard d-block px-md-3 px-xl-0"
+                                target="_blank">
                                 <div class="customCard__wrap position-relative overflow-hidden w-100 h-100 mb-3">
-                                    <div class="customCard__wrap__mask d-flex justify-content-center align-items-center">
+                                    <div
+                                        class="customCard__wrap__mask d-flex justify-content-center align-items-center">
                                         <div
                                             class="customCard__wrap__mask__text d-flex align-items-center text-white font-size-sm h4-md text-center">
-                                            <i class="fas fa-link mr-1 mr-md-2"></i><span class="font-weight-bold font-size-sm h4-md">DEMO</span>
+                                            <i class="fas fa-link mr-1 mr-md-2"></i><span
+                                                class="font-weight-bold font-size-sm h4-md">DEMO</span>
                                         </div>
                                     </div>
                                     <img src="./assets/images/ALOHA.jpg" class="portfolioImg">
@@ -134,13 +113,16 @@
                                 </div>
                             </a>
                         </li>
-                        <li class="col-6 col-lg-4 col-xl-3 mb-5 mb-md-8">
-                            <a href="#" class="customCard d-block px-md-3 px-xl-0">
+                        <li class="col-6 col-lg-4 col-xl-3 mb-5 mb-md-8" data-aos="fade-up" data-aos-delay="300">
+                            <a href="https://umon752.github.io/week7_Fixie/" class="customCard d-block px-md-3 px-xl-0"
+                                target="_blank">
                                 <div class="customCard__wrap position-relative overflow-hidden w-100 h-100 mb-3">
-                                    <div class="customCard__wrap__mask d-flex justify-content-center align-items-center">
+                                    <div
+                                        class="customCard__wrap__mask d-flex justify-content-center align-items-center">
                                         <div
                                             class="customCard__wrap__mask__text d-flex align-items-center text-white font-size-sm h4-md text-center">
-                                            <i class="fas fa-link mr-1 mr-md-2"></i><span class="font-weight-bold font-size-sm h4-md">DEMO</span>
+                                            <i class="fas fa-link mr-1 mr-md-2"></i><span
+                                                class="font-weight-bold font-size-sm h4-md">DEMO</span>
                                         </div>
                                     </div>
                                     <img src="./assets/images/Fixie.jpg" class="portfolioImg">
@@ -154,13 +136,16 @@
                                 </div>
                             </a>
                         </li>
-                        <li class="col-6 col-lg-4 col-xl-3 mb-5 mb-md-8">
-                            <a href="#" class="customCard d-block px-md-3 px-xl-0">
+                        <li class="col-6 col-lg-4 col-xl-3 mb-5 mb-md-8" data-aos="fade-up" data-aos-delay="400">
+                            <a href="https://umon752.github.io/Jewellery/" class="customCard d-block px-md-3 px-xl-0"
+                                target="_blank">
                                 <div class="customCard__wrap position-relative overflow-hidden w-100 h-100 mb-3">
-                                    <div class="customCard__wrap__mask d-flex justify-content-center align-items-center">
+                                    <div
+                                        class="customCard__wrap__mask d-flex justify-content-center align-items-center">
                                         <div
                                             class="customCard__wrap__mask__text d-flex align-items-center text-white font-size-sm h4-md text-center">
-                                            <i class="fas fa-link mr-1 mr-md-2"></i><span class="font-weight-bold font-size-sm h4-md">DEMO</span>
+                                            <i class="fas fa-link mr-1 mr-md-2"></i><span
+                                                class="font-weight-bold font-size-sm h4-md">DEMO</span>
                                         </div>
                                     </div>
                                     <img src="./assets/images/Jewellery.jpg" class="portfolioImg">
@@ -175,13 +160,16 @@
                                 </div>
                             </a>
                         </li>
-                        <li class="col-6 col-lg-4 col-xl-3 mb-5 mb-md-8">
-                            <a href="#" class="customCard d-block px-md-3 px-xl-0">
+                        <li class="col-6 col-lg-4 col-xl-3 mb-5 mb-md-8" data-aos="fade-up" data-aos-delay="500">
+                            <a href="https://umon752.github.io/HomeStudio/" class="customCard d-block px-md-3 px-xl-0"
+                                target="_blank">
                                 <div class="customCard__wrap position-relative overflow-hidden w-100 h-100 mb-3">
-                                    <div class="customCard__wrap__mask d-flex justify-content-center align-items-center">
+                                    <div
+                                        class="customCard__wrap__mask d-flex justify-content-center align-items-center">
                                         <div
                                             class="customCard__wrap__mask__text d-flex align-items-center text-white font-size-sm h4-md text-center">
-                                            <i class="fas fa-link mr-1 mr-md-2"></i><span class="font-weight-bold font-size-sm h4-md">DEMO</span>
+                                            <i class="fas fa-link mr-1 mr-md-2"></i><span
+                                                class="font-weight-bold font-size-sm h4-md">DEMO</span>
                                         </div>
                                     </div>
                                     <img src="./assets/images/HomeStudio.jpg" class="portfolioImg">
@@ -195,13 +183,16 @@
                                 </div>
                             </a>
                         </li>
-                        <li class="col-6 col-lg-4 col-xl-3 mb-5 mb-md-8">
-                            <a href="#" class="customCard d-block px-md-3 px-xl-0">
+                        <li class="col-6 col-lg-4 col-xl-3 mb-5 mb-md-8" data-aos="fade-up" data-aos-delay="600">
+                            <a href="https://umon752.github.io/PlantRoom/" class="customCard d-block px-md-3 px-xl-0"
+                                target="_blank">
                                 <div class="customCard__wrap position-relative overflow-hidden w-100 h-100 mb-3">
-                                    <div class="customCard__wrap__mask d-flex justify-content-center align-items-center">
+                                    <div
+                                        class="customCard__wrap__mask d-flex justify-content-center align-items-center">
                                         <div
                                             class="customCard__wrap__mask__text d-flex align-items-center text-white font-size-sm h4-md text-center">
-                                            <i class="fas fa-link mr-1 mr-md-2"></i><span class="font-weight-bold font-size-sm h4-md">DEMO</span>
+                                            <i class="fas fa-link mr-1 mr-md-2"></i><span
+                                                class="font-weight-bold font-size-sm h4-md">DEMO</span>
                                         </div>
                                     </div>
                                     <img src="./assets/images/PlantRoom.jpg" class="portfolioImg">
@@ -215,13 +206,16 @@
                                 </div>
                             </a>
                         </li>
-                        <li class="col-6 col-lg-4 col-xl-3 mb-5 mb-md-8">
-                            <a href="#" class="customCard d-block px-md-3 px-xl-0">
+                        <li class="col-6 col-lg-4 col-xl-3 mb-5 mb-md-8" data-aos="fade-up" data-aos-delay="700">
+                            <a href="https://umon752.github.io/JS_WOWOROOM/" class="customCard d-block px-md-3 px-xl-0"
+                                target="_blank">
                                 <div class="customCard__wrap position-relative overflow-hidden w-100 h-100 mb-3">
-                                    <div class="customCard__wrap__mask d-flex justify-content-center align-items-center">
+                                    <div
+                                        class="customCard__wrap__mask d-flex justify-content-center align-items-center">
                                         <div
                                             class="customCard__wrap__mask__text d-flex align-items-center text-white font-size-sm h4-md text-center">
-                                            <i class="fas fa-link mr-1 mr-md-2"></i><span class="font-weight-bold font-size-sm h4-md">DEMO</span>
+                                            <i class="fas fa-link mr-1 mr-md-2"></i><span
+                                                class="font-weight-bold font-size-sm h4-md">DEMO</span>
                                         </div>
                                     </div>
                                     <img src="./assets/images/WOWOROOM.jpg" class="portfolioImg">
@@ -237,13 +231,16 @@
                                 </div>
                             </a>
                         </li>
-                        <li class="col-6 col-lg-4 col-xl-3 mb-5 mb-md-8">
-                            <a href="#" class="customCard d-block px-md-3 px-xl-0">
+                        <li class="col-6 col-lg-4 col-xl-3 mb-5 mb-md-8" data-aos="fade-up" data-aos-delay="800">
+                            <a href="https://umon752.github.io/JS_WOWOROOM/admin"
+                                class="customCard d-block px-md-3 px-xl-0" target="_blank">
                                 <div class="customCard__wrap position-relative overflow-hidden w-100 h-100 mb-3">
-                                    <div class="customCard__wrap__mask d-flex justify-content-center align-items-center">
+                                    <div
+                                        class="customCard__wrap__mask d-flex justify-content-center align-items-center">
                                         <div
                                             class="customCard__wrap__mask__text d-flex align-items-center text-white font-size-sm h4-md text-center">
-                                            <i class="fas fa-link mr-1 mr-md-2"></i><span class="font-weight-bold font-size-sm h4-md">DEMO</span>
+                                            <i class="fas fa-link mr-1 mr-md-2"></i><span
+                                                class="font-weight-bold font-size-sm h4-md">DEMO</span>
                                         </div>
                                     </div>
                                     <img src="./assets/images/WOWOROOM_admin.jpg" class="portfolioImg">
@@ -260,13 +257,15 @@
                                 </div>
                             </a>
                         </li>
-                        <li class="col-6 col-lg-4 col-xl-3 mb-5 mb-md-8">
+                        <li class="col-6 col-lg-4 col-xl-3 mb-5 mb-md-8" data-aos="fade-up" data-aos-delay="900">
                             <a href="#" class="customCard d-block px-md-3 px-xl-0">
                                 <div class="customCard__wrap position-relative overflow-hidden w-100 h-100 mb-3">
-                                    <div class="customCard__wrap__mask d-flex justify-content-center align-items-center">
+                                    <div
+                                        class="customCard__wrap__mask d-flex justify-content-center align-items-center">
                                         <div
                                             class="customCard__wrap__mask__text d-flex align-items-center text-white font-size-sm h4-md text-center">
-                                            <i class="fas fa-link mr-1 mr-md-2"></i><span class="font-weight-bold font-size-sm h4-md">DEMO</span>
+                                            <i class="fas fa-link mr-1 mr-md-2"></i><span
+                                                class="font-weight-bold font-size-sm h4-md">DEMO</span>
                                         </div>
                                     </div>
                                     <img src="./assets/images/MaskMap.jpg" class="portfolioImg">
@@ -279,67 +278,103 @@
                             </a>
                         </li>
                     </ul>
+                    <div class="portfolioPoint d-none d-xl-block">
+                        <p class="h5 h1-md font-size-lg-lg font-weight-bold d-flex align-items-center mb-2"
+                            data-aos="fade-right">
+                            PLEASE
+                            <img src="./assets/images/icon.svg" class="animation-rotate ml-4">
+                        </p>
+                        <p class="h6 h2-md h1-lg mb-1" data-aos="fade-right" data-aos-delay="100">CLICK
+                        </p>
+                        <p class="h6 h2-md h1-lg mb-5" data-aos="fade-right" data-aos-delay="200">DEMO
+                        </p>
+                    </div>
                 </div>
-                <div class="tab-pane fade" id="pills-practice" role="tabpanel" aria-labelledby="pills-practice-tab">2
+                <div class="tab-pane fade position-relative" id="pills-practice" role="tabpanel"
+                    aria-labelledby="pills-practice-tab">
+                    <ul class="row py-2 py-md-4">
+                        <li class="col-6 col-lg-4 col-xl-3 mb-5 mb-md-8" data-aos="fade-up" data-aos-delay="100">
+                            <a href="https://codepen.io/Yi-Chieh/pen/mdONQrg?editors=1011"
+                                class="customCard d-block px-md-3 px-xl-0" target="_blank">
+                                <div class="customCard__wrap position-relative overflow-hidden w-100 h-100 mb-3">
+                                    <div
+                                        class="customCard__wrap__mask d-flex justify-content-center align-items-center">
+                                        <div
+                                            class="customCard__wrap__mask__text d-flex align-items-center text-white font-size-sm h4-md text-center">
+                                            <i class="fas fa-link mr-1 mr-md-2"></i><span
+                                                class="font-weight-bold font-size-sm h4-md">DEMO</span>
+                                        </div>
+                                    </div>
+                                    <img src="./assets/images/Ajax.jpg" class="portfolioImg">
+                                </div>
+                                <h4 class="font-size-sm h6-md text-center text-md-left">Sign up / Login</h4>
+                                <div class="d-none d-md-block">
+                                    <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Scss</span>
+                                    <span class="bg-light text-white font-size-xs font-size-md-sm px-1">JS</span>
+                                    <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Ajax</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-6 col-lg-4 col-xl-3 mb-5 mb-md-8" data-aos="fade-up" data-aos-delay="100">
+                            <a href="https://umon752.github.io/ShinyCard/" class="customCard d-block px-md-3 px-xl-0"
+                                target="_blank">
+                                <div class="customCard__wrap position-relative overflow-hidden w-100 h-100 mb-3">
+                                    <div
+                                        class="customCard__wrap__mask d-flex justify-content-center align-items-center">
+                                        <div
+                                            class="customCard__wrap__mask__text d-flex align-items-center text-white font-size-sm h4-md text-center">
+                                            <i class="fas fa-link mr-1 mr-md-2"></i><span
+                                                class="font-weight-bold font-size-sm h4-md">DEMO</span>
+                                        </div>
+                                    </div>
+                                    <img src="./assets/images/ShinyCard.jpg" class="portfolioImg">
+                                </div>
+                                <h4 class="font-size-sm h6-md text-center text-md-left">ShinyCard</h4>
+                                <div class="d-none d-md-block">
+                                    <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Scss</span>
+                                    <span class="bg-light text-white font-size-xs font-size-md-sm px-1">JS</span>
+                                    <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Ajax</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="portfolioPoint d-none d-xl-block">
+                        <p class="h5 h1-md font-size-lg-lg font-weight-bold d-flex align-items-center mb-2"
+                            data-aos="fade-right">
+                            PLEASE
+                            <img src="./assets/images/icon.svg" class="animation-rotate ml-4">
+                        </p>
+                        <p class="h6 h2-md h1-lg mb-1" data-aos="fade-right" data-aos-delay="100">CLICK
+                        </p>
+                        <p class="h6 h2-md h1-lg mb-5" data-aos="fade-right" data-aos-delay="200">DEMO
+                        </p>
+                    </div>
                 </div>
-                <div class="text-center pt-5 pb-9">
+                <div class="text-center pt-5 pb-9" data-aos="fade-right">
                     <a href="./index.html"
-                        class="position-relative d-inline-block rounded-0 button-telesto font-size-sm h6-md px-3 py-2 px-md-4"><span><span>GO
+                        class="position-relative d-inline-block rounded-0 button-telesto-secondary font-size-sm h6-md px-3 py-2 px-md-4"><span><span>GO
                                 BACK</span></span></a>
                 </div>
             </div>
         </section>
 
-        <!-- footer -->
-        <footer>
-            <!-- <ul class="d-flex justify-content-around justify-content-md-center w-100 w-md-auto mb-2">
-            <li>
-                <a href="#about-me" class="js-scrollAnimate footerLink font-size-sm h5-md px-md-7">About</a>
-            </li>
-            <li>
-                <a href="#portfolio" class="js-scrollAnimate footerLink font-size-sm h5-md px-md-7">Portfolio</a>
-            </li>
-            <li>
-                <a href="#contact" class="js-scrollAnimate footerLink font-size-sm h5-md px-md-7">Contact</a>
-            </li>
-            <li class="d-flex align-items-center">
-                <a href="https://www.behance.net/umon7523ce3" class="footerLink h5 px-md-7" target="_blank">
-                    <i class="fab fa-behance py-1"></i>
-                </a>
-            </li>
-        </ul> -->
+        <!-- Footer -->
+        <footer class="footer w-100">
             <p class="font-size-sm bg-white text-md-center border-top border-light px-4 py-2 py-md-3">©2021 Copyright.
                 All Rights Reserved.<span class="d-block d-md-inline mt-1 mt-md-0">Develop by Yi Chieh Lee</span></p>
         </footer>
-
     </div>
 
-
-
-
-    <!-- <div class="mask">
-        <span></span><span></span><span></span><span></span><span></span><span></span>
-    </div> -->
-    <!-- cursor -->
-    <div class="cursorFront d-none d-xl-block"></div>
-    <div class="cursorBack d-none d-xl-block"></div>
 
 
     <!-- Anime（CDN） -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <!-- AOS（CDN） -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <!-- Parallax -->
-    <!-- <script src="./assets/js/parallax.min.js"></script> -->
-    <!-- Swiper（CDN） -->
-    <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
-    <!-- jQuery -->
+    <!-- jQuery（Source） -->
     <script src="./assets/js/vendors/jquery-3.6.0.min.js"></script>
-    <!-- Bootstrap -->
+    <!-- Bootstrap（Source） -->
     <script src="./assets/js/vendors/bootstrap.min.js"></script>
-    <!-- <script src="./assets/js/vendors/jquery.js"></script> -->
-    <!-- Scrollme -->
-    <!-- <script src="./assets/js/vendors/jquery.scrollme.min.js"></script> -->
     <script src="./assets/js/all.js"></script>
 </body>
 

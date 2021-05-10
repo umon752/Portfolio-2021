@@ -5,8 +5,10 @@
         @include media-breakpoint-up(md) {
             height: 350px;
         }
+}
 
-        // @include media-breakpoint-up(lg) {
-        //     height: 350px;
-        // }
+.portfolioPoint {
+    position: absolute;
+    right: 0;
+    bottom: 10%;
 }

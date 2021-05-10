@@ -1,5 +1,4 @@
 .logo {
-    // @include text-hidden(50px, 40px, "../../images/logo.svg");
     width: 34px;
     height: 34px;
     border-radius: 50%;
@@ -154,15 +153,11 @@
 }
 
 .navSide {
-    // width: calc(100% - 12px);
-    // height: calc(100vh - 12px);
     width: 280px;
     height: 100vh;
     position: absolute;
     top: 0;
     right: 0;
-    // top: -2px;
-    // right: -2px;
     border: 2px solid black;
     @include bg-material;
     background-color: $primary;
@@ -215,8 +210,6 @@
 
     &.active {
         transform: translateX(0);
-        // display: block;
-        // width: calc(100% + 4px);
         opacity: 1;
         @include linear;
     }

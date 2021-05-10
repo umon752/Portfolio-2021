@@ -1,10 +1,7 @@
 /* 滑鼠事件 */
 $(window).mousemove(function (e) {
-    console.log(e.pageY);
-    $('.cursorFront').css('transform', `translate(${e.pageX - ($('.cursorFront').width() / 2)}px, ${e.pageY - ($('.cursorFront').height() / 2)}px)`);
-    // $('.cursorFront').css('left', `${e.pageX - ($('.cursorFront').width() / 2)}px`);
-    $('.cursorBack').css('transform', `translate(${e.pageX - ($('.cursorBack').width() / 2)}px, ${e.pageY - ($('.cursorBack').height() / 2)}px)`);
-    // $('.cursorBack').css('left', `${e.pageX - ($('.cursorBack').width() / 2)}px`);
+    $('.cursorFront').css('transform', `translate(${e.pageX - ($('.cursorFront').width())}px, ${e.pageY - ($('.cursorFront').height())}px)`);
+    $('.cursorBack').css('transform', `translate(${e.pageX - ($('.cursorBack').width()-2)}px, ${e.pageY - ($('.cursorBack').height()-2)}px)`);
 });
 
 /* 點擊事件 */
@@ -22,7 +19,6 @@ $('.closeBtn').click(function (e) {
 
 $('.cover__body__icon').click(function (e) {
     e.preventDefault();
-    // $('.cover__seal').addClass('active');
     $('.cover__body__stamp__wrap').removeClass('active');
 
     setTimeout(function () {
@@ -52,15 +48,6 @@ $('.goTop').click(function (e) {
     }, 1000);
 })
 
-/* 觸碰裝置 */
-if ("ontouchstart" in window) {
-    $('.cursorFront').css('display', 'none');
-    $('.cursorBack').css('display', 'none');
-} else {
-    $('.cursorFront').css('display', 'block');
-    $('.cursorBack').css('display', 'block');
-}
-
 /* 橫屏時 */
 window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", function () {
     // if (window.orientation === 180 || window.orientation === 0) {
@@ -80,11 +67,11 @@ window.addEventListener("onorientationchange" in window ? "orientationchange" : 
         $('.cover__body').css('height', '74%');
         $('.cover__body__icon ').css('position', 'static');
         $('.cover__body__icon ').css('animation', 'none');
-        
 
-        // height:1024 (pad)
-        if($(window).height() === 1024) {
-            alert($(window).height()=== 1024);
+
+        // height:1024px (pad)
+        if ($(window).height() === 1024) {
+            alert($(window).height() === 1024);
             $('.cover__body__stamp').css('width', '180px');
             $('.cover__body__code').css('width', '260px');
             $('.cover__body__sticker').css('width', '260px');
@@ -100,30 +87,32 @@ window.addEventListener("onorientationchange" in window ? "orientationchange" : 
 
 
 
-
-
 /* 初始化 */
 function init() {
-    /* 印章日期 */
+    // 日期
     stampDate();
 
-    /* 進入畫面動畫 */
-    opening();
+    // 判斷是否為觸碰裝置
+    isTouch();
 
-    /* 載入 AOS */
-    AOS.init({
-        duration: 600,
-        delay: 300,
-        once: true
-    });
+    // Loading 動畫
+    loading();
 
-    /* 載入 swiper */
-    swiper();
-
-    /* 開始滑動 */
     setTimeout(function () {
+        // 進入畫面動畫
+        opening();
+
+        // 載入 AOS
+        AOS.init({
+            duration: 600,
+            delay: 300,
+            once: true
+        });
+
+        // 開始滑動
         scrolling();
-    }, 2500);
+    },2800);
+
 }
 init();
 
@@ -146,11 +135,89 @@ function stampDate() {
     $('.js-date').text(`DATE：${month} / ${date}`);
 };
 
+/* 是否為觸碰裝置 */
+function isTouch() {
+    if ("ontouchstart" in window) {
+        $('.cursorFront').css('display', 'none');
+        $('.cursorBack').css('display', 'none');
+    } else {
+        $('.cursorFront').css('display', 'block');
+        $('.cursorBack').css('display', 'block');
+    }
+}
+
+/* Loading */
+function loading() {
+    // anime.js
+    const textWrapper = document.querySelector('.js-loading-text');
+    textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter d-inline-block'>$&</span>");
+
+    anime.timeline({
+            loop: false
+        })
+        .add({
+            targets: '.loading__line',
+            scaleY: [0, 1],
+            opacity: [0.5, 1],
+            easing: "easeOutExpo",
+            duration: 600
+        })
+        .add({
+            targets: '.loading__line',
+            translateX: [0, document.querySelector('.js-loading-text').getBoundingClientRect().width + 10],
+            easing: "easeOutExpo",
+            duration: 600,
+            delay: 100
+        });
+
+        anime.timeline({
+            loop: false
+        })
+        .add({
+            targets: '.letter',
+            duration: 700,
+        }).add({
+            targets: '.letter',
+            opacity: [0, 1],
+            easing: "easeOutExpo",
+            duration: 500,
+            offset: '-=775',
+            delay: (el, i) => 34 * (i + 1)
+        }).add({
+            targets: '.loading',
+            opacity: [1, 0.5],
+            translateX: [0, '100%'],
+            duration: 1000,
+            easing: "easeOutExpo",
+            delay: 1000
+        });
+    // .add({
+    //     targets: '.loading',
+    //     opacity: [1, 0.6],
+    //     // translateY: [0, '-100%'],
+    //     translateX: [0, '100%'],
+    //     // rotate: [0, 360],
+    //     // scale: [1, 0.5],
+    //     // backgroundColor: ['black', '$secondary'],
+    //     // scale: [1, 0],
+    //     // clipPath: ['circle(100% at center)','circle(0 at center)'],
+    //     duration: 700,
+    //     easing: "easeOutExpo",
+    //     // delay: 1000
+    // });
+}
+
 /* 進入畫面動畫 */
 function opening() {
     // anime.js
     anime.timeline({
             loop: false
+        })
+        .add({
+            targets: '.wrap',
+            opacity: [0, 1],
+            duration: 100,
+            easing: 'linear'
         })
         .add({
             targets: '.wrap__lineTop',
@@ -188,170 +255,74 @@ function opening() {
             easing: 'linear'
         });
 
-        
-        anime.timeline({
-                loop: false
-            })
-            .add({
-                targets: '.cover__line',
-                opacity: [0, 1],
-                width: [0, '100%'],
-                duration: 200,
-                delay: 800,
-                easing: 'linear'
-            })
-            .add({
-                targets: ['.cover__head','.cover__footer'],
-                opacity: [0, 1],
-                duration: 300,
-                easing: 'linear'
-            })
-            .add({
-                targets: ['.js-cover-title', '.js-cover-subTitle'],
-                opacity: [0, 1],
-                translateY: ['30px', 0],
-                duration: 200,
-                easing: 'linear'
-            })
-            .add({
-                targets: '.js-cover-passed',
-                opacity: [0, 1],
-                duration: 100,
-                easing: 'linear'
-            })
-            .add({
-                targets: '.js-cover-semicircle2',
-                opacity: [0, 1],
-                translateY: ['30px', 0],
-                duration: 150,
-                delay: 210,
-                easing: 'linear'
-            })
-            .add({
-                targets: '.cover__body__stamp__wrap',
-                opacity: [0, 1],
-                translateZ: ['500px', 0],
-                duration: 200,
-                delay: 800,
-                easing: 'linear'
-            });
 
-            anime.timeline({
-                loop: false
-            })
-            .add({
-                targets: ['.js-cover-code', '.js-cover-sticker'],
-                opacity: [0, 1],
-                translateY: ['30px', 0],
-                zIndex: 99,
-                duration: 300,
-                delay: 1500,
-                easing: 'linear'
-            })
-            .add({
-                targets: '.js-cover-semicircle1',
-                opacity: [0, 1],
-                translateY: ['-30px', 0],
-                duration: 150,
-                easing: 'linear'
-            });
+    anime.timeline({
+            loop: false
+        })
+        .add({
+            targets: '.cover__line',
+            opacity: [0, 1],
+            width: [0, '100%'],
+            duration: 200,
+            delay: 800,
+            easing: 'linear'
+        })
+        .add({
+            targets: ['.cover__head', '.cover__footer'],
+            opacity: [0, 1],
+            duration: 300,
+            easing: 'linear'
+        })
+        .add({
+            targets: ['.js-cover-title', '.js-cover-subTitle'],
+            opacity: [0, 1],
+            translateY: ['30px', 0],
+            duration: 200,
+            easing: 'linear'
+        })
+        .add({
+            targets: '.js-cover-passed',
+            opacity: [0, 1],
+            duration: 100,
+            easing: 'linear'
+        })
+        .add({
+            targets: '.js-cover-semicircle2',
+            opacity: [0, 1],
+            translateY: ['30px', 0],
+            duration: 150,
+            delay: 210,
+            easing: 'linear'
+        })
+        .add({
+            targets: '.cover__body__stamp__wrap',
+            opacity: [0, 1],
+            translateZ: ['500px', 0],
+            duration: 200,
+            delay: 800,
+            easing: 'linear'
+        });
 
-            
-            
-    // anime.timeline({
-    //         loop: false
-    //     })
-    //     .add({
-    //         targets: '.cover__title',
-    //         opacity: [0, 1],
-    //         translateY: ['30%', 0],
-    //         duration: 200,
-    //         delay: 800,
-    //         easing: 'linear'
-    //     });
-
-    // anime.timeline({
-    //         loop: false
-    //     })
-    //     .add({
-    //         targets: '.js-cover-subtitle',
-    //         opacity: [0, 1],
-    //         translateY: ['-10%', 0],
-    //         duration: 200,
-    //         delay: 800,
-    //         easing: 'linear'
-    //     });
-
-    // anime.timeline({
-    //         loop: false
-    //     })
-    //     .add({
-    //         targets: '.cover__line',
-    //         opacity: [0, 1],
-    //         width: [0, '100%'],
-    //         duration: 800,
-    //         easing: 'linear'
-    //     })
-    //     .add({
-    //         targets: '.cover__seal',
-    //         opacity: [0, 1],
-    //         translateY: ['-100%', '5px'],
-    //         duration: 200,
-    //         easing: 'linear'
-    //     })
-    //     .add({
-    //         targets: '.cover__icon',
-    //         opacity: [0, 1],
-    //         duration: 200,
-    //         delay: 200,
-    //         easing: 'linear'
-    //     })
-    //     .add({
-    //         targets: '.cover__ticket',
-    //         opacity: [0, 1],
-    //         translateX: ['-10%', '1px'],
-    //         translateY: ['100%', '1px'],
-    //         rotate: [0, '-3deg'],
-    //         duration: 150,
-    //         easing: 'linear'
-    //     })
-    //     .add({
-    //         targets: '.cover__ticket',
-    //         translateX: ['1px', 0],
-    //         translateY: ['1px', 0],
-    //         rotate: ['-3deg', 0],
-    //         duration: 200,
-    //         easing: 'linear'
-    //     })
-    //     .add({
-    //         targets: '.cover__sticker',
-    //         opacity: [0, 1],
-    //         translateZ: ['1000px', 0],
-    //         translateX: ['100%', '3px'],
-    //         boxShadow: ['0 5px 15px rgba(0, 0, 0, 0.5)', '0 5px 15px rgba(0, 0, 0, 0)'],
-    //         duration: 200,
-    //         delay: 350,
-    //         easing: 'linear'
-    //     });
+    anime.timeline({
+            loop: false
+        })
+        .add({
+            targets: ['.js-cover-code', '.js-cover-sticker'],
+            opacity: [0, 1],
+            translateY: ['30px', 0],
+            zIndex: 99,
+            duration: 300,
+            delay: 1500,
+            easing: 'linear'
+        })
+        .add({
+            targets: '.js-cover-semicircle1',
+            opacity: [0, 1],
+            translateY: ['-30px', 0],
+            duration: 150,
+            easing: 'linear'
+        });
 }
-
-/**/
-anime.timeline({
-        targets: '.cover__marquee',
-        loop: true,
-        easing: "linear"
-    })
-    .add({
-        translateY: [{
-                value: '0'
-            },
-            {
-                value: '-100%',
-                delay: 1500
-            }
-        ],
-        duration: 1000
-    });
 
 /* 開始滾動 */
 function scrolling() {
@@ -387,40 +358,6 @@ function scrolling() {
         return window.scrollY
     });
 
-    // lax.addDriver('protfolioH', function () {
-    //     return $('#portfolio').height();
-    // });
-
-    // lax.addElements('.cover__seal', {
-    //     scrollY: {
-    //         translateY: [
-    //             ['elInY', 'elCenterY', 'elOutY-1080'],
-    //             {
-    //                 500: [0, 0, 0],
-    //                 1000: [0, 0, -200],
-    //                 1400: [0, 0, -200]
-    //             },
-    //         ],
-    //         opacity: [
-    //             ['elInY', 'elCenterY', 'elOutY'],
-    //             [1, 0]
-    //         ]
-    //     }
-    // });
-
-    // lax.addElements('.cover__sticker', {
-    //     scrollY: {
-    //         translateZ: [
-    //             ["elInY", "elCenterY", "elOutY"],
-    //             [0, 0, 100],
-    //         ],
-    //         opacity: [
-    //             ["elInY", "elCenterY", "elOutY"],
-    //             [1, 1, 0.5]
-    //         ]
-    //     }
-    // });
-
     lax.addElements('.checkedStamp img', {
         scrollY: {
             translateZ: [
@@ -434,33 +371,6 @@ function scrolling() {
         }
     });
 
-    // lax.addElements('.js-cardText-first', {
-    //     scrollY: {
-    //         translateX: [
-    //             ["elInY", "elCenterY", "elOutY"],
-    //             [100, 0, -200],
-    //         ]
-    //     }
-    // });
-
-    // lax.addElements('.js-cardText-second', {
-    //     scrollY: {
-    //         translateX: [
-    //             ["elInY", "elCenterY", "elOutY"],
-    //             [-200, 30, -200],
-    //         ]
-    //     }
-    // });
-
-    // lax.addElements('.js-cardText-third', {
-    //     scrollY: {
-    //         translateX: [
-    //             ["elInY", "elCenterY", "elOutY"],
-    //             [-200, 20, -200],
-    //         ]
-    //     }
-    // });
-
     lax.addElements('.js-arrow', {
         scrollY: {
             translateX: [
@@ -473,70 +383,4 @@ function scrolling() {
             ]
         }
     });
-
-    // lax.addElements('.js-list ', {
-    //     scrollY: {
-    //         translateY: [
-    //             ["elInY", "elCenterY", "elOutY"],
-    //             [100, 0, -100],
-    //         ],
-    //         scale: [
-    //             ["elInY", "elCenterY", "elOutY"],
-    //             [0.9, 1, 0.9],
-    //         ],
-    //         opacity: [
-    //             ["elInY", "elCenterY", "elOutY"],
-    //             [0, 1, 0]
-    //         ]
-    //     }
-    // })
 }
-
-/* swiper */
-function swiper() {
-    const swiper = new Swiper(".mySwiper", {
-        slidesPerView: 1,
-        centeredSlides: false,
-        spaceBetween: 30,
-        grabCursor: true,
-        scrollbar: {
-            el: ".swiper-scrollbar",
-        },
-        breakpoints: {
-            375: {
-                slidesPerView: 1.3
-            },
-            414: {
-                slidesPerView: 1.5
-            },
-            768: {
-                slidesPerView: 2.5,
-                centeredSlides: true
-            },
-            1200: {
-                slidesPerView: 3.5,
-                centeredSlides: true
-            },
-        }
-    });
-}
-
-
-
-
-// function scrolling() {
-//     // $('.cover__sticker').addClass('animateme');
-//     // $('.cover__ticket').addClass('animateme');
-
-
-// }
-
-
-
-
-// $('.cover__body__icon').mousemove(function (e) {
-//     $('.cover__seal').addClass('animate');
-// })
-// $('.cover__icon').mouseleave(function (e) {
-//     $('.cover__seal').removeClass('animate');
-// })

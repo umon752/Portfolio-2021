@@ -1,4 +1,10 @@
-.footerLink {
+.footer {
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+}
+
+.footer__link {
     display: block;
     position: relative;
     @include linear;

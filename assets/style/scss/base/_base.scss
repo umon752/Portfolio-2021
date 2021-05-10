@@ -30,11 +30,11 @@ a {
 ul {
     list-style: none;
     padding: 0;
-    margin-bottom: 0;
+    margin-bottom: 0; /* 消除 Bootstrap 預設 */
 }
 
 h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6,p {
-    margin-bottom: 0;
-    line-height: 1;
+    margin-bottom: 0; /* 消除 Bootstrap 預設 */
+    line-height: 1; /* 消除 Bootstrap 預設 */
 }
 

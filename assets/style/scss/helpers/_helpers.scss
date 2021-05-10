@@ -14,10 +14,6 @@
     transition: all linear $duration;
 }
 
-// @mixin ease-out {
-//     transition: ease-out 300ms;
-// }
-
 @mixin img-cover($width,$height,$position) {
     width: $width;
     height: $height;
@@ -34,6 +30,7 @@
     background-repeat: no-repeat;
 }
 
+// 背景透明材質
 @mixin bg-material {
     background-image: url("../../images/material.png");
     background-position: center center;

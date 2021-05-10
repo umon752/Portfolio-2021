@@ -1,12 +1,11 @@
-.button-telesto {
+.button-telesto-secondary {
     overflow: hidden;
-    // border: none;
     background: $secondary;
     border: 2px solid $secondary;
     color: white;
 }
 
-.button-telesto::before {
+.button-telesto-secondary::before {
     width: 135%;
     height: 100%;
     content: '';
@@ -16,13 +15,10 @@
     -webkit-clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 0% 0%);
     clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 0% 0%);
     transform: translate3d(-100%,0,0);
-    // background: black;
-    // background: lighten($secondary, 8%);
     background: $primary;
-    // mix-blend-mode: color-dodge;
 }
 
-.button-telesto::after {
+.button-telesto-secondary::after {
     width: 105%;
     height: 100%;
     content: '';
@@ -31,44 +27,41 @@
     left: 0;
     transform: translate3d(100%,0,0);
     transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
-    // background: black;
-    // background: lighten($secondary, 8%);
     background: $primary;
-    // mix-blend-mode: color-dodge;
 }
 
-.button-telesto:hover::after {
+.button-telesto-secondary:hover::after {
     transform: translate3d(0,0,0);
     transition: transform 0.01s 0.3s cubic-bezier(0.7, 0, 0.2, 1);
 }
 
-.button-telesto:hover {
+.button-telesto-secondary:hover {
     color: $secondary;
 }
 
-.button-telesto > span {
+.button-telesto-secondary > span {
     overflow: hidden;
 }
 
-.button-telesto span {
+.button-telesto-secondary span {
     display: block;
     position: relative;
     z-index: 1;
 }
 
-.button-telesto:hover::before {
+.button-telesto-secondary:hover::before {
     transform: translate3d(0,0,0);
     transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
 }
 
-.button-telesto::before {
+.button-telesto-secondary::before {
     width: 135%;
     -webkit-clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 0% 0%);
     clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 0% 0%);
     transform: translate3d(-100%,0,0);
 }
 
-.button-telesto:hover > span > span {
+.button-telesto-secondary:hover > span > span {
     animation: MoveRightInitial 0.1s forwards, MoveRightEnd 0.3s forwards 0.2s;
 }
 

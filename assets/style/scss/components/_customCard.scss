@@ -1,10 +1,8 @@
 .customCard {
     @include linear(250ms);
-    // transform: scale(1);
 
     &:hover {
         @include linear(250ms);
-        // transform: scale(0.9);
         transform: translateY(10px);
         color: black;
     }
@@ -21,9 +19,6 @@
 
     &:hover .customCard__wrap__mask {
         opacity: 1;
-        // width: 100%;
-        // transform: scale(1.8) translateX(-50%) translateY(-50%);
-        // transform: translateX(0);
         @include linear(250ms);
     }
 
@@ -56,9 +51,7 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        // border-radius: 50%;
         background-color: rgba(0, 0, 0, 0.3);
-        // transform: translateX(100%);
         transform: translateX(-50%) translateY(-50%);
         transform-origin: 0 0;
         opacity: 0;
