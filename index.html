@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Yi Chieh Lee | 2021</title>
+    <title>Yi Chieh Lee's Portfolio | 2021</title>
     <link rel="shortcut icon" href="./assets/images/logo.svg" type="image/svg">
     <!-- Font Awesome（CDN） -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
@@ -24,6 +24,7 @@
             <span class="loading__line"></span>
             <span
                 class="js-loading-text h2 h1-md font-size-lg-lg font-weight-bold text-white d-inline-block">HELLO！</span>
+            <img src="./assets/images/icon.svg" class="loading__icon">
         </span>
     </div>
 
@@ -410,23 +411,31 @@
                     <span class="titleIcon mr-1 mr-md-2"></span>
                     <span>CONTACT</span>
                 </h3>
-                <div class="list row mb-3">
-                    <div class="list__left col-12 col-lg-6 px-0 mb-5 mb-lg-0">
-                        <h4 class="h6 h5-lg border-bottom text-center text-lg-left py-1 px-lg-5">DEVELOP</h4>
+                <div class="list row justify-content-center mb-3">
+                    <div class="list__left col-12 col-lg-4 px-0 mb-5 mb-lg-0">
+                        <h4 class="h6 h5-lg border-bottom text-center text-lg-left py-1 px-lg-5">LINE</h4>
                         <ul class="p-3 p-md-5">
-                            <li class="d-flex align-items-center font-size-sm h6-md mb-2"><span
-                                    class="list__icon mr-2 mr-sm-3"></span> HTML / CSS / Scss / Bootstrap</li>
-                            <li class="d-flex align-items-center font-size-sm h6-md"><span
-                                    class="list__icon mr-2 mr-sm-3"></span> jQuery / JavaScript / Vue</li>
+                            <li
+                                class="d-flex justify-content-center justify-content-lg-start align-items-center font-size-sm h6-md mb-2">
+                                <img src="./assets/images/line.jpg" width="100">
+                            </li>
                         </ul>
                     </div>
-                    <div class="list__right col-12 col-lg-6 px-0">
-                        <h4 class="h6 h5-lg border-bottom text-center text-lg-left py-1 px-lg-5">EXPERIENCE</h4>
+                    <div class="list__right col-12 col-lg-4 px-0 mb-5 mb-lg-0">
+                        <h4 class="h6 h5-lg border-bottom text-center text-lg-left py-1 px-lg-5">INFORMATION</h4>
                         <ul class="p-3 p-md-5">
-                            <li class="d-flex align-items-center font-size-sm h6-md mb-2"><span
-                                    class="list__icon mr-2 mr-sm-3"></span> 2013 — 2017 台南應用科技大學 / 視覺傳達設計系</li>
-                            <li class="d-flex align-items-center font-size-sm h6-md"><span
-                                    class="list__icon mr-2 mr-sm-3"></span> 2018 — 2021 家裡蹲創意印刷公司 / 平面設計</li>
+                            <li class="d-flex align-items-center font-size-sm h6-md mb-2">
+                                <span class="list__icon mr-2 mr-sm-3"></span>
+                                <a href="mailto:umon752@gmail.com">
+                                    EMAIL / umon752@gmail.com
+                                </a>
+                            </li>
+                            <li class="d-flex align-items-center font-size-sm h6-md mb-2">
+                                <span class="list__icon mr-2 mr-sm-3"></span>
+                                <a href="tel:0975690678">
+                                    PHONE / 0975-690-678
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -434,19 +443,19 @@
         </section>
 
         <!-- Footer -->
-        <footer class="footer w-100">
+        <footer>
             <ul class="d-flex justify-content-around justify-content-md-center w-100 w-md-auto mb-2">
                 <li>
-                    <a href="#about-me" class="js-scrollAnimate footer__link font-size-sm h5-md px-md-7">About</a>
+                    <a href="#about-me" class="js-scrollAnimate footerLink font-size-sm h5-md px-md-7">About</a>
                 </li>
                 <li>
-                    <a href="#portfolio" class="js-scrollAnimate footer__link font-size-sm h5-md px-md-7">Portfolio</a>
+                    <a href="#portfolio" class="js-scrollAnimate footerLink font-size-sm h5-md px-md-7">Portfolio</a>
                 </li>
                 <li>
-                    <a href="#contact" class="js-scrollAnimate footer__link font-size-sm h5-md px-md-7">Contact</a>
+                    <a href="#contact" class="js-scrollAnimate footerLink font-size-sm h5-md px-md-7">Contact</a>
                 </li>
                 <li class="d-flex align-items-center">
-                    <a href="https://www.behance.net/umon7523ce3" class="footer__link h5 px-md-7" target="_blank">
+                    <a href="https://www.behance.net/umon7523ce3" class="footerLink h5 px-md-7" target="_blank">
                         <i class="fab fa-behance py-1"></i>
                     </a>
                 </li>
@@ -468,34 +477,69 @@
     <script src="./assets/js/vendors/jquery-3.6.0.min.js"></script>
     <script src="./assets/js/all.js"></script>
 
+    <!-- Lax（Module） -->
+    <script type="module">
+        lax.init();
+
+        lax.addDriver('scrollY', function () {
+            return window.scrollY
+        });
+
+        lax.addElements('.checkedStamp img', {
+            scrollY: {
+                translateZ: [
+                    ["elInY", "elCenterY", "elOutY"],
+                    [200, 0, 0],
+                ],
+                opacity: [
+                    ["elInY", "elCenterY", "elOutY"],
+                    [0, 1, 0]
+            ]
+            }
+        });
+
+        lax.addElements('.js-arrow', {
+            scrollY: {
+                translateX: [
+                    ["elInY", "elCenterY", "elOutY"],
+                    [500, 0, -200],
+                ],
+                opacity: [
+                    ["elInY", "elCenterY", "elOutY"],
+                    [0, 1, 0]
+                ]
+            }
+        });
+    </script>
+
     <!-- Swiper（Module） -->
     <script type="module">
         import Swiper from 'https://unpkg.com/swiper/swiper-bundle.esm.browser.min.js'
-    const swiper = new Swiper(".mySwiper", {
-        slidesPerView: 1,
-        centeredSlides: false,
-        spaceBetween: 30,
-        grabCursor: true,
-        scrollbar: {
-            el: ".swiper-scrollbar",
-        },
-        breakpoints: {
-            375: {
-                slidesPerView: 1.3
+        const swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            centeredSlides: false,
+            spaceBetween: 30,
+            grabCursor: true,
+            scrollbar: {
+                el: ".swiper-scrollbar",
             },
-            414: {
-                slidesPerView: 1.5
-            },
-            768: {
-                slidesPerView: 2.5,
-                centeredSlides: true
-            },
-            1200: {
-                slidesPerView: 3.5,
-                centeredSlides: true
-            },
-        }
-    });
+            breakpoints: {
+                375: {
+                    slidesPerView: 1.3
+                },
+                414: {
+                    slidesPerView: 1.5
+                },
+                768: {
+                    slidesPerView: 2.5,
+                    centeredSlides: true
+                },
+                1200: {
+                    slidesPerView: 3.5,
+                    centeredSlides: true
+                },
+            }
+        });
     </script>
 </body>
 

@@ -85,34 +85,101 @@ window.addEventListener("onorientationchange" in window ? "orientationchange" : 
     }
 }, false);
 
+let loadingAnimation;
+/* Loading 動畫 */
+function loading() {
+    // anime.js
+    const textWrapper = document.querySelector('.js-loading-text');
+    textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter d-inline-block'>$&</span>");
+
+    loadingAnimation = anime.timeline({
+            loop: true
+        })
+        .add({
+            targets: '.loading__line',
+            scaleY: [0, 1],
+            opacity: [0.5, 1],
+            easing: "easeOutExpo",
+            duration: 600
+        })
+        .add({
+            targets: '.loading__line',
+            translateX: [0, document.querySelector('.js-loading-text').getBoundingClientRect().width + 10],
+            easing: "easeOutExpo",
+            duration: 600,
+            delay: 100
+        }).add({
+            targets: '.loading__icon',
+            opacity: [0, 1],
+            translateX: [0, '-48px'],
+            translateY: [0, '-48px'],
+            duration: 350,
+            easing: "easeOutExpo",
+        }).add({
+            targets: '.loading__icon',
+            opacity: [1, 0],
+            scale: [1, 10],
+            duration: 450,
+            easing: "easeOutExpo",
+        });
+
+    anime.timeline({
+            loop: true
+        })
+        .add({
+            targets: '.letter',
+            duration: 700,
+        }).add({
+            targets: '.letter',
+            opacity: [0, 1],
+            easing: "easeOutExpo",
+            duration: 500,
+            offset: '-=775',
+            delay: (el, i) => 34 * (i + 1)
+        }).add({
+            targets: ['.letter', '.loading__line'],
+            opacity: [1, 0],
+            duration: 700,
+        });
+}
+
+
+
+/* 全部載入完畢執行 */
+window.onload = function () {
+    setTimeout(function () {
+        // Loading 消失
+        loadingFadeOut();
+
+        // 進入畫面動畫
+        opening();
+
+        // 載入 AOS
+        setTimeout(function () {
+        AOS.init({
+            duration: 600,
+            delay: 300,
+            once: true
+        });
+        }, 100);
+    }, 2800);
+}
+
 
 
 /* 初始化 */
 function init() {
+    // Loading 動畫
+    loading();
+
     // 日期
     stampDate();
 
     // 判斷是否為觸碰裝置
     isTouch();
 
-    // Loading 動畫
-    loading();
-
-    setTimeout(function () {
-        // 進入畫面動畫
-        opening();
-
-        // 載入 AOS
-        AOS.init({
-            duration: 600,
-            delay: 300,
-            once: true
-        });
-
-        // 開始滑動
-        scrolling();
-    },2800);
-
+    // 開始滑動
+    scrolling();
 }
 init();
 
@@ -146,65 +213,19 @@ function isTouch() {
     }
 }
 
-/* Loading */
-function loading() {
-    // anime.js
-    const textWrapper = document.querySelector('.js-loading-text');
-    textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter d-inline-block'>$&</span>");
-
+/* Loading 消失*/ 
+function loadingFadeOut() {
+    loadingAnimation.pause();
     anime.timeline({
-            loop: false
-        })
-        .add({
-            targets: '.loading__line',
-            scaleY: [0, 1],
-            opacity: [0.5, 1],
-            easing: "easeOutExpo",
-            duration: 600
-        })
-        .add({
-            targets: '.loading__line',
-            translateX: [0, document.querySelector('.js-loading-text').getBoundingClientRect().width + 10],
-            easing: "easeOutExpo",
-            duration: 600,
-            delay: 100
-        });
-
-        anime.timeline({
-            loop: false
-        })
-        .add({
-            targets: '.letter',
-            duration: 700,
-        }).add({
-            targets: '.letter',
-            opacity: [0, 1],
-            easing: "easeOutExpo",
-            duration: 500,
-            offset: '-=775',
-            delay: (el, i) => 34 * (i + 1)
-        }).add({
-            targets: '.loading',
-            opacity: [1, 0.5],
-            translateX: [0, '100%'],
-            duration: 1000,
-            easing: "easeOutExpo",
-            delay: 1000
-        });
-    // .add({
-    //     targets: '.loading',
-    //     opacity: [1, 0.6],
-    //     // translateY: [0, '-100%'],
-    //     translateX: [0, '100%'],
-    //     // rotate: [0, 360],
-    //     // scale: [1, 0.5],
-    //     // backgroundColor: ['black', '$secondary'],
-    //     // scale: [1, 0],
-    //     // clipPath: ['circle(100% at center)','circle(0 at center)'],
-    //     duration: 700,
-    //     easing: "easeOutExpo",
-    //     // delay: 1000
-    // });
+        loop: false
+    }).add({
+        targets: '.loading',
+        opacity: [1, 0.5],
+        translateX: [0, '100%'],
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: 600
+    });
 }
 
 /* 進入畫面動畫 */
@@ -223,7 +244,7 @@ function opening() {
             targets: '.wrap__lineTop',
             opacity: [0, 1],
             width: [0, '100%'],
-            duration: 500,
+            duration: 300,
             easing: 'linear'
         })
         .add({
@@ -350,37 +371,4 @@ function scrolling() {
             }, 100);
         }
     })
-
-    // lax.js
-    lax.init();
-
-    lax.addDriver('scrollY', function () {
-        return window.scrollY
-    });
-
-    lax.addElements('.checkedStamp img', {
-        scrollY: {
-            translateZ: [
-                ["elInY", "elCenterY", "elOutY"],
-                [200, 0, 0],
-            ],
-            opacity: [
-                ["elInY", "elCenterY", "elOutY"],
-                [0, 1, 0]
-            ]
-        }
-    });
-
-    lax.addElements('.js-arrow', {
-        scrollY: {
-            translateX: [
-                ["elInY", "elCenterY", "elOutY"],
-                [500, 0, -200],
-            ],
-            opacity: [
-                ["elInY", "elCenterY", "elOutY"],
-                [0, 1, 0]
-            ]
-        }
-    });
 }
