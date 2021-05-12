@@ -36,3 +36,81 @@
     background-position: center center;
     background-repeat: repeat;
 }
+
+// 按鈕
+@mixin btn-telesto($color, $hoverColor) {
+    overflow: hidden;
+    background: $color;
+    border: 2px solid $color;
+    color: white;
+
+    &::before {
+        width: 135%;
+        height: 100%;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        -webkit-clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 0% 0%);
+        clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 0% 0%);
+        transform: translate3d(-100%,0,0);
+        background: $hoverColor;
+    }
+
+    &::after {
+        width: 105%;
+        height: 100%;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate3d(100%,0,0);
+        transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
+        background: $hoverColor;
+    }
+
+    span {
+        display: block;
+        position: relative;
+        z-index: 1;
+    }
+
+    & > span {
+        overflow: hidden;
+    }
+    
+
+    &:hover {
+        color: $color;
+
+        &::after {
+            transform: translate3d(0,0,0);
+            transition: transform 0.01s 0.3s cubic-bezier(0.7, 0, 0.2, 1);
+        }
+
+        &::before {
+            transform: translate3d(0,0,0);
+            transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
+        }
+    }
+
+    &:hover > span > span {
+        animation: MoveRightInitial 0.1s forwards, MoveRightEnd 0.3s forwards 0.2s;
+    }
+}
+
+
+@keyframes MoveRightEnd {
+    0% {
+        transform: translate3d(-100%,0,0);
+    }
+    100% {
+        transform: translate3d(0,0,0);
+    }
+}
+
+@keyframes MoveRightInitial {
+    100% {
+        transform: translate3d(105%,0,0);
+    }
+}

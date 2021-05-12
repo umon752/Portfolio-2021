@@ -16,12 +16,12 @@
             border-right: none;
         }
     }
-}
 
-.list__icon {
-    width: 10px;
-    height: 10px;
-    background-image: url("../../images/icon.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
+    &__icon {
+        width: 10px;
+        height: 10px;
+        background-image: url("../../images/icon.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
 }

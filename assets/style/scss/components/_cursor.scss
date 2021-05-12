@@ -9,7 +9,6 @@
     mix-blend-mode: difference;
     isolation: isolate;
     z-index: 9999;
-
     border-radius: 50%;
     @include linear(150ms);
 }
