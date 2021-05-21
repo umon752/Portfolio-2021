@@ -1,4 +1,4 @@
-.portfolioImg {
+.worksImg {
     @include linear(250ms);
         @include img-cover(100%,200px,top);
 
@@ -7,13 +7,13 @@
         }
 }
 
-.portfolioPoint {
+.worksPoint {
     position: absolute;
     right: 0;
     bottom: 10%;
 }
 
-.portfolioFooter {
+.worksFooter {
     position: absolute;
     bottom: 0;
     z-index: -1;

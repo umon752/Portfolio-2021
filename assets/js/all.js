@@ -154,6 +154,9 @@ window.onload = function () {
         // 進入畫面動畫
         opening();
 
+        // body 的 overflow-y 拿掉 (loading 動畫消失後才可滾動頁面)
+        $('body').css('overflow-y', 'auto');
+
         // 載入 AOS
         setTimeout(function () {
         AOS.init({
@@ -302,7 +305,7 @@ function opening() {
             easing: 'linear'
         })
         .add({
-            targets: '.js-cover-passed',
+            targets: '.js-cover-result',
             opacity: [0, 1],
             duration: 100,
             easing: 'linear'
@@ -321,6 +324,12 @@ function opening() {
             translateZ: ['500px', 0],
             duration: 200,
             delay: 800,
+            easing: 'linear'
+        })
+        .add({
+            targets: '.js-cover-resultBtn',
+            opacity: [0, 1],
+            duration: 200,
             easing: 'linear'
         });
 
