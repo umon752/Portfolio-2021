@@ -50,8 +50,16 @@ $('.goTop').click(function (e) {
 
 /* 橫屏時 */
 window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", function () {
-
+    // if (window.orientation === 180 || window.orientation === 0) {
+    //     // alert('豎屏狀態！');
+    //     $('.js-cover-subTitle').addClass('mb-9');
+    //     $('.cover__head').css('height', '15%');
+    //     $('.cover__footer').css('height', '15%');
+    //     $('.cover__body').css('height', '70%');
+    //     $('.cover__body__icon ').css('position', 'absolute');
+    // }
     if (window.orientation === 90 || window.orientation === -90) {
+        alert('橫屏狀態！');
         $('.js-cover-subTitle').addClass('mb-2');
         $('.js-cover-subTitle').removeClass('mb-9');
         $('.cover__head').css('height', '13%');
@@ -63,6 +71,7 @@ window.addEventListener("onorientationchange" in window ? "orientationchange" : 
 
         // height:1024px (pad)
         if ($(window).height() === 1024) {
+            alert($(window).height() === 1024);
             $('.cover__body__stamp').css('width', '180px');
             $('.cover__body__code').css('width', '260px');
             $('.cover__body__sticker').css('width', '260px');
