@@ -1,7 +1,13 @@
 /* 滑鼠事件 */
 $(window).mousemove(function (e) {
-    $('.cursorFront').css('transform', `translate(${e.pageX - ($('.cursorFront').width())}px, ${e.pageY - ($('.cursorFront').height())}px)`);
-    $('.cursorBack').css('transform', `translate(${e.pageX - ($('.cursorBack').width()-2)}px, ${e.pageY - ($('.cursorBack').height()-2)}px)`);
+    let frontPosY = `${e.clientY - ($('.cursorFront').height() / 2)}px`;
+    let frontPosX = `${e.clientX - ($('.cursorFront').width() / 2)}px`;
+
+    let backPosY = `${e.clientY - ($('.cursorBack').height() / 2)}px`;
+    let backPosX = `${e.clientX - ($('.cursorBack').width() / 2)}px`;
+
+    $('.cursorFront').css('transform', `translateY(${frontPosY}) translateX(${frontPosX})`);
+    $('.cursorBack').css('transform', `translateY(${backPosY}) translateX(${backPosX})`);
 });
 
 /* 點擊事件 */
@@ -352,20 +358,20 @@ function scrolling() {
     $(window).scroll(function (e) {
         let scroll = $(window).scrollTop();
         if (scroll > position) {
-            $('.logo').css('display', 'block');
+            $('.logo').addClass('active');
             setTimeout(function () {
                 $('.logo').css('opacity', 1);
             }, 100);
-            $('.goTop').css('display', 'flex');
+            $('.goTop').addClass('active');
             setTimeout(function () {
                 $('.goTop').css('opacity', 1);
             }, 100);
         } else {
-            $('.logo').css('display', 'none');
+            $('.logo').removeClass('active');
             setTimeout(function () {
                 $('.logo').css('opacity', 0);
             }, 100);
-            $('.goTop').css('display', 'none');
+            $('.goTop').removeClass('active');
             setTimeout(function () {
                 $('.goTop').css('opacity', 0);
             }, 100);

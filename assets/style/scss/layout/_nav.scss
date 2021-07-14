@@ -4,8 +4,7 @@
     border-radius: 50%;
     border: 2px solid black;
     position: relative;
-    @include linear(300ms);
-    opacity: 0;
+    visibility: hidden;
     display: none;
     background-color: $primary;
 
@@ -16,6 +15,11 @@
 
     @include media-breakpoint-up(xl) {
         background-color: transparent;
+    }
+
+    &.active {
+        display: block;
+        visibility: visible;
     }
 
     &::before {

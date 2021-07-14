@@ -1,7 +1,7 @@
 .cursorFront {
     width: 28px;
     height: 28px;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     background-color: lighten($primary, 15%);
@@ -10,14 +10,14 @@
     isolation: isolate;
     z-index: 9999;
     border-radius: 50%;
-    @include linear(150ms);
+    transition: transform 150ms;
 }
 
 .cursorBack {
     z-index: 9999;
     width: 32px;
     height: 32px;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     background-color: lighten($primary, 15%);

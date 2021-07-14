@@ -7,7 +7,6 @@
     z-index: 1000;
     background-color: white;
     border: 2px solid black;
-    opacity: 0;
     display: none;
     @include linear(300ms);
 
@@ -21,5 +20,9 @@
     &:hover {
         border-color: $secondary;
         @include linear;
+    }
+
+    &.active {
+        display: flex;
     }
 }

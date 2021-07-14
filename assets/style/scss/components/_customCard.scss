@@ -13,8 +13,20 @@
     }
 
     &:hover .customCard__wrap__img {
-        width: 110%;
-        @include linear(250ms);
+        @include linear(500ms);
+        transform: translateY(calc(-100% + 300px));
+
+        @include media-breakpoint-up(sm) {
+            transform: translateY(calc(-100% + 400px));
+        }
+
+        @include media-breakpoint-up(md) {
+            transform: translateY(calc(-100% + 350px));
+        }
+
+        @include media-breakpoint-up(lg) {
+            transform: translateY(calc(-100% + 410px));
+        }
     }
 
     &:hover .customCard__wrap__mask {
@@ -29,12 +41,8 @@
 
     &__wrap {
         box-shadow: 3px 3px 3px rgba(119, 119, 119, 0.2);
+        height: 300px;
         @include linear(250ms);
-    }
-
-    &__wrap__img {
-        @include linear(250ms);
-        @include img-cover(100%,300px,top);
 
         @include media-breakpoint-up(sm) {
             height: 400px;
@@ -49,6 +57,24 @@
         }
     }
 
+    &__wrap__img {
+        @include linear(500ms);
+        @include img-cover(100%,auto,top);
+        // @include img-cover(100%,300px,top);
+
+        // @include media-breakpoint-up(sm) {
+        //     height: 400px;
+        // }
+
+        // @include media-breakpoint-up(md) {
+        //     height: 350px;
+        // }
+
+        // @include media-breakpoint-up(lg) {
+        //     height: 410px;
+        // }
+    }
+
     &__wrap__mask {
         width: 100%;
         height: 100%;
@@ -59,6 +85,7 @@
         transform: translateX(-50%) translateY(-50%);
         transform-origin: 0 0;
         opacity: 0;
+        z-index: 999;
         @include linear(250ms);
     }
 
