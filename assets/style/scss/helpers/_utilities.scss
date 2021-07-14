@@ -25,6 +25,11 @@
 // $套用斷點
 @include font-size();
 
+@include media-breakpoint-up(sm) {
+    @include font-size(-sm);
+    @include h1-h6(-sm);
+}
+
 @include media-breakpoint-up(md) {
     @include font-size(-md);
     @include h1-h6(-md);

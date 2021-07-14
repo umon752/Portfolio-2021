@@ -36,6 +36,10 @@
         @include linear(250ms);
         @include img-cover(100%,300px,top);
 
+        @include media-breakpoint-up(sm) {
+            height: 400px;
+        }
+
         @include media-breakpoint-up(md) {
             height: 350px;
         }

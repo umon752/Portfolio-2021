@@ -1,21 +1,22 @@
 .cover {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
     height: 100%;
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translateX(-50%) translateY(-50%);
+    // height: 100%;
     // min-height: 800px;
 }
 
-.cover__head,
-.cover__footer {
-    height: 15%;
-    min-height: 70px;
+// .cover__head,
+// .cover__footer {
+//     height: 15%;
+//     min-height: 70px;
 
-    @include media-breakpoint-up(md) {
-        min-height: 100px;
-    }
-}
+//     @include media-breakpoint-up(md) {
+//         min-height: 100px;
+//     }
+// }
 
 .cover__line {
     position: relative;
@@ -29,12 +30,12 @@
 }
 
 .cover__body {
-    height: 70%;
-    min-height: 300px;
+    // height: 70%;
+    // min-height: 400px;
 
-    @include media-breakpoint-up(md) {
-        min-height: 600px;
-    }
+    // @include media-breakpoint-up(md) {
+    //     min-height: 600px;
+    // }
 
     &__icon {
         // position: absolute;
@@ -47,7 +48,7 @@
             right: -25%;
         }
 
-        @include media-breakpoint-up(lg) {
+        @include media-breakpoint-up(xl) {
             position: absolute;
             bottom: 25%;
             right: 0;
@@ -84,14 +85,21 @@
         width: 120px;
         transform: translateX(30px) translateY(5px);
 
+        @include media-breakpoint-up(sm) {
+            width: 130px;
+        }
+
         @include media-breakpoint-up(md) {
-            width: 200px;
-            // transform: translateX(50px) translateY(-20px);
+            width: 190px;
         }
 
         @include media-breakpoint-up(lg) {
-            width: 250px;
+            width: 180px;
             transform: translateX(100px) translateY(-5px);
+        }
+
+        @include media-breakpoint-up(xl) {
+            width: 250px;
         }
 
         &__wrap {
@@ -119,12 +127,20 @@
         width: 150px;
         transform: translateX(5px);
 
+        @include media-breakpoint-up(sm) {
+            width: 180px;
+        }
+
         @include media-breakpoint-up(md) {
-            width: 280px;
+            width: 260px;
             transform: rotate(-2deg) translateX(-2px);
         }
 
         @include media-breakpoint-up(lg) {
+            width: 270px;
+        }
+
+        @include media-breakpoint-up(xl) {
             width: 330px;
         }
     }
@@ -135,12 +151,20 @@
         position: relative;
         z-index: 2;
 
+        @include media-breakpoint-up(sm) {
+            width: 180px;
+        }
+
         @include media-breakpoint-up(md) {
-            width: 280px;
+            width: 260px;
             transform: rotate(8deg) translateY(16px) translateX(-12px);
         }
 
         @include media-breakpoint-up(lg) {
+            width: 270px;
+        }
+
+        @include media-breakpoint-up(xl) {
             width: 330px;
         }
     }
@@ -150,12 +174,21 @@
         z-index: 1;
         transform: rotate(180deg) translateX(-20px) translateY(-2px);
 
+        @include media-breakpoint-up(sm) {
+            width: 130px;
+        }
+
         @include media-breakpoint-up(md) {
             width: 160px;
             transform: rotate(180deg) translateX(-70px) translateY(-2px);
         }
 
         @include media-breakpoint-up(lg) {
+            width: 170px;
+            transform: rotate(180deg) translateX(-50px) translateY(-2px);
+        }
+
+        @include media-breakpoint-up(xl) {
             width: 210px;
         }
     }
@@ -165,26 +198,25 @@
         z-index: 1;
         transform: translateX(20px) translateY(2px);
 
+        @include media-breakpoint-up(sm) {
+            width: 130px;
+        }
+
         @include media-breakpoint-up(md) {
             width: 160px;
             transform: translateX(70px) translateY(2px);
         }
 
         @include media-breakpoint-up(lg) {
+            width: 170px;
+            transform: translateX(50px) translateY(2px);
+        }
+
+        @include media-breakpoint-up(xl) {
             width: 210px;
         }
     }
 }
-
-// @keyframes scale-mobile {
-//     0% {
-//         transform: scale(1);
-//     }
-
-//     100% {
-//         transform: scale(1.1);
-//     }
-// }
 
 @keyframes scale {
     0% {

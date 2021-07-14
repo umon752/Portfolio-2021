@@ -2,7 +2,15 @@
     @include linear(250ms);
         @include img-cover(100%,200px,top);
 
+        @include media-breakpoint-up(sm) {
+            height: 350px;
+        }
+
         @include media-breakpoint-up(md) {
+            height: 400px;
+        }
+
+        @include media-breakpoint-up(lg) {
             height: 350px;
         }
 }
