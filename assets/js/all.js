@@ -11,18 +11,32 @@ $(window).mousemove(function (e) {
 });
 
 /* 點擊事件 */
+// 開啟 sidebar
 $('.navToggle').click(function (e) {
     e.preventDefault();
     $('.navSide').toggleClass('active');
+    setTimeout(function () {
+        $('.navSide__link').addClass('active');
+    }, 400);
     $('.overlay').css('display', 'block');
 })
 
+// 關閉 sidebar
 $('.closeBtn').click(function (e) {
     e.preventDefault();
     $('.navSide').removeClass('active');
+    $('.navSide__link').removeClass('active');
+    $('.overlay').css('display', 'none');
+})
+$('.overlay').click(function (e) {
+    e.preventDefault();
+    $('.navSide').removeClass('active');
+    $('.navSide__title').removeClass('active');
+    $('.navSide__link').removeClass('active');
     $('.overlay').css('display', 'none');
 })
 
+// 執行蓋章動態
 $('.cover__body__icon').click(function (e) {
     e.preventDefault();
     $('.cover__body__stamp__wrap').removeClass('active');
@@ -45,6 +59,8 @@ $('.js-scrollAnimate').click(function (e) {
     $('html, body').animate({
         scrollTop: targetPos
     }, 1000);
+    $('.navSide').removeClass('active');
+    $('.overlay').css('display', 'none');
 });
 
 $('.goTop').click(function (e) {
@@ -159,7 +175,7 @@ window.onload = function () {
         AOS.init({
             duration: 600,
             delay: 300,
-            once: true
+            once: false
         });
         }, 100);
     }, 2800);
@@ -198,8 +214,8 @@ function stampDate() {
         date = `0${date}`;
     }
     $('.cover__body__stamp__wrap__text').html(`<p><span class="d-none d-md-block mb-1 mb-md-2">DATE</span><span class="d-block mb-1 mb-md-2">${month} / ${date}</span><span class="d-block">${year}</span></p>`);
-    $('.js-year').text(`YEAR：${year}`);
-    $('.js-date').text(`DATE：${month} / ${date}`);
+    $('.js-year').text(`${year}`);
+    $('.js-date').text(`${month} / ${date}`);
 };
 
 /* 是否為觸碰裝置 */
@@ -361,19 +377,23 @@ function scrolling() {
             $('.logo').addClass('active');
             setTimeout(function () {
                 $('.logo').css('opacity', 1);
+                $('.logo').css('transform', 'translateY(0)');
             }, 100);
             $('.goTop').addClass('active');
             setTimeout(function () {
                 $('.goTop').css('opacity', 1);
+                $('.goTop').css('transform', 'translateY(0)');
             }, 100);
         } else {
             $('.logo').removeClass('active');
             setTimeout(function () {
                 $('.logo').css('opacity', 0);
+                $('.logo').css('transform', 'translateY(-10px)');
             }, 100);
             $('.goTop').removeClass('active');
             setTimeout(function () {
                 $('.goTop').css('opacity', 0);
+                $('.goTop').css('transform', 'translateY(10px)');
             }, 100);
         }
     })

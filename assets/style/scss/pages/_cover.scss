@@ -8,6 +8,32 @@
     // min-height: 800px;
 }
 
+.cover__date {
+    animation: marquee 2500ms linear infinite running;
+}
+
+.cover__year {
+    animation: marquee 2800ms linear infinite running;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateY(100%);
+    }
+
+    20% {
+        transform: translateY(0);
+    }
+
+    80% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
 // .cover__head,
 // .cover__footer {
 //     height: 15%;
@@ -27,6 +53,21 @@
     background-color: black;
     transform: translate(-50%);
     z-index: -1;
+}
+
+.cover__body__title {
+        transition: all ease-in-out 200ms;
+        &:hover {
+            transition: all ease-in-out 200ms;
+            transform: translateX(3px);
+        }
+}
+.cover__body__subTitle {
+    transition: all ease-in-out 250ms;
+    &:hover {
+        transition: all ease-in-out 250ms;
+        transform: translateX(5px);
+    }
 }
 
 .cover__body {
@@ -126,6 +167,7 @@
     &__code {
         width: 150px;
         transform: translateX(5px);
+        @include linear;
 
         @include media-breakpoint-up(sm) {
             width: 180px;
@@ -143,6 +185,14 @@
         @include media-breakpoint-up(xl) {
             width: 330px;
         }
+
+        &:hover {
+            transform: rotate(-2deg) translateX(5px);
+            @include media-breakpoint-up(md) {
+                transform: rotate(-4deg) translateX(-2px);
+                @include linear;
+            }
+        }
     }
 
     &__sticker {
@@ -150,6 +200,7 @@
         transform: rotate(8deg) translateY(10px);
         position: relative;
         z-index: 2;
+        @include linear;
 
         @include media-breakpoint-up(sm) {
             width: 180px;
@@ -166,6 +217,14 @@
 
         @include media-breakpoint-up(xl) {
             width: 330px;
+        }
+
+        &:hover {
+            transform: rotate(6deg) translateY(10px);
+            @include media-breakpoint-up(md) {
+                transform: rotate(6deg) translateY(16px) translateX(-12px);
+                @include linear;
+            }
         }
     }
 

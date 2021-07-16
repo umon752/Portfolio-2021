@@ -55,7 +55,7 @@
                     <h4 class="navSide__title h3 h2-md d-inline">MENU</h4>
                     <a href="#" class="closeBtn"></a>
                 </div>
-                <ul class="d-fle flex-column h-100 pl-1">
+                <ul class="d-flex flex-column h-100 pl-1">
                     <li class="mb-5">
                         <a href="#aboutMe" class="js-scrollAnimate navSide__link h6 h5-md hover-letterSpacing">
                             About Me
@@ -63,7 +63,7 @@
                     </li>
                     <li class="mb-5">
                         <a href="#sideProject" class="js-scrollAnimate navSide__link h6 h5-md hover-letterSpacing">
-                            Side Project 
+                            Side Project
                         </a>
                     </li>
                     <li class="mb-5">
@@ -86,20 +86,30 @@
         <section class="w-100 mb-8 mb-md-9 mb-xl-10">
             <div class="cover container">
 
-                <div class="cover__head d-flex justify-content-between align-items-end py-2 py-md-4 mt-8 mt-md-9">
-                    <div class="js-year font-size-xs font-size-md-sm"></div>
+                <div class="d-flex justify-content-between align-items-end py-2 py-md-4 mt-8 mt-md-9">
+                    <div class="font-size-xs font-size-md-sm overflow-hidden">YEAR：
+                        <span class="js-year cover__year d-inline-block"></span>
+                    </div>
                     <div class="font-size-xs font-size-md-sm font-weight-bold">CHECKLIST</div>
-                    <div class="js-date font-size-xs font-size-md-sm"></div>
+                    <div class="font-size-xs font-size-md-sm overflow-hidden">DATE：
+                        <span class="js-date cover__date d-inline-block"></span>
+                    </div>
                 </div>
 
                 <div class="cover__line"></div>
 
                 <div class="cover__body d-flex justify-content-between align-items-center py-9">
                     <div>
-                        <h2 class="js-cover-title h4 h3-sm h1-md font-size-lg-xl font-size-xl-xxl font-weight-bold mb-3">
+                        <div class="cover__body__title">
+                        <h2
+                            class="js-cover-title h4 h3-sm h1-md font-size-lg-xl font-size-xl-xxl font-weight-bold mb-3">
                             PORTFOLIO</h2>
-                        <h3 class="js-cover-subTitle h5 h4-sm h2-md font-size-lg-lg font-size-xl-xl mb-9 mb-md-5 mb-xl-9">
+                        </div>
+                        <div class="cover__body__subTitle">
+                        <h3
+                            class="js-cover-subTitle h5 h4-sm h2-md font-size-lg-lg font-size-xl-xl mb-9 mb-md-5 mb-xl-9">
                             I AM<span class="d-block mt-1 mt-lg-3">YI-CHIEH LEE</span></h3>
+                        </div>
                         <div class="font-size-sm h6-md position-relative">
                             <a href="#" class="js-cover-resultBtn cover__body__icon d-flex align-items-center mb-1">
                                 <img class="cover__body__icon__img animation-rotate mr-1 mr-lg-2"
@@ -136,7 +146,7 @@
 
                 <div class="cover__line"></div>
 
-                <div class="cover__footer d-flex justify-content-between py-2 py-md-4">
+                <div class="d-flex justify-content-between py-2 py-md-4">
                     <div class="font-size-xs font-size-md-sm">DEVELOP BY 2021</div>
                     <div class="font-size-xs font-size-md-sm">THANK YOU！</div>
                 </div>
@@ -200,7 +210,9 @@
                             PLEASE
                             <img src="./assets/images/icon.svg" class="animation-rotate ml-4">
                         </p>
-                        <img class="js-arrow" src="./assets/images/arrow.svg" data-aos="fade-left" data-aos-delay="300">
+                        <div data-aos="fade-left" data-aos-delay="300">
+                            <img class="arrow" src="./assets/images/arrow.svg">
+                        </div>
                     </div>
                     <ul class="swiper-wrapper d-flex mb-9">
                         <li class="swiper-slide" data-aos="fade-up" data-aos-delay="100">
@@ -218,11 +230,11 @@
                                 </div>
                                 <h4 class="font-size-sm h6-md">WOWOROOM - 前台</h4>
                                 <span class="bg-light text-white font-size-xs font-size-md-sm px-1">SCSS</span>
-                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Bootstrap</span>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Bootstrap4</span>
                                 <span class="bg-light text-white font-size-xs font-size-md-sm px-1">JS</span>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Axios</span>
                                 <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Anime.js</span>
                                 <span class="bg-light text-white font-size-xs font-size-md-sm px-1">AOS</span>
-                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">AJAX</span>
                             </a>
                         </li>
                         <li class="swiper-slide" data-aos="fade-up" data-aos-delay="200">
@@ -241,12 +253,12 @@
                                 </div>
                                 <h4 class="font-size-sm h6-md">WOWOROOM - 後台</h4>
                                 <span class="bg-light text-white font-size-xs font-size-md-sm px-1">SCSS</span>
-                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Bootstrap</span>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Bootstrap4</span>
                                 <span class="bg-light text-white font-size-xs font-size-md-sm px-1">JS</span>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Axios</span>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">C3.js</span>
                                 <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Anime.js</span>
                                 <span class="bg-light text-white font-size-xs font-size-md-sm px-1">AOS</span>
-                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">AJAX</span>
-                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">C3.js</span>
                             </a>
                         </li>
                         <li class="swiper-slide" data-aos="fade-up" data-aos-delay="300">
@@ -286,7 +298,7 @@
                                 </div>
                                 <h4 class="font-size-sm h6-md">ALOHA</h4>
                                 <span class="bg-light text-white font-size-xs font-size-md-sm px-1">SCSS</span>
-                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Bootstrap</span>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Bootstrap4</span>
                                 <span class="bg-light text-white font-size-xs font-size-md-sm px-1">JS</span>
                                 <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Anime.js</span>
                                 <span class="bg-light text-white font-size-xs font-size-md-sm px-1">AOS</span>
@@ -307,7 +319,7 @@
                                 </div>
                                 <h4 class="font-size-sm h6-md">Fixie</h4>
                                 <span class="bg-light text-white font-size-xs font-size-md-sm px-1">SCSS</span>
-                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Bootstrap</span>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Bootstrap4</span>
                                 <span class="bg-light text-white font-size-xs font-size-md-sm px-1">jQuery</span>
                                 <span class="bg-light text-white font-size-xs font-size-md-sm px-1">AOS</span>
                             </a>
@@ -327,7 +339,7 @@
                                 </div>
                                 <h4 class="font-size-sm h6-md">Jewellery</h4>
                                 <span class="bg-light text-white font-size-xs font-size-md-sm px-1">SCSS</span>
-                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Bootstrap</span>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Bootstrap4</span>
                                 <span class="bg-light text-white font-size-xs font-size-md-sm px-1">JS</span>
                                 <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Anime.js</span>
                                 <span class="bg-light text-white font-size-xs font-size-md-sm px-1">AOS</span>
@@ -368,7 +380,7 @@
                                 </div>
                                 <h4 class="font-size-sm h6-md">PlantRoom</h4>
                                 <span class="bg-light text-white font-size-xs font-size-md-sm px-1">SCSS</span>
-                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Bootstrap</span>
+                                <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Bootstrap4</span>
                                 <span class="bg-light text-white font-size-xs font-size-md-sm px-1">JS</span>
                                 <span class="bg-light text-white font-size-xs font-size-md-sm px-1">Anime.js</span>
                             </a>
@@ -403,7 +415,7 @@
         </section>
 
         <!-- Contact -->
-        <section id="contact" class="container py-8 py-md-9 py-xl-10 mb-8 mb-md-9 mb-xl-10" data-aos="fade-up">
+        <section id="contact" class="js-contact container py-8 py-md-9 py-xl-10 mb-8 mb-md-9 mb-xl-10" data-aos="fade-up">
             <div class="position-relative bg-white shadow-sm py-7 px-7 px-sm-9 px-xl-10">
                 <div class="checkedStamp">
                     <img src="./assets/images/checked.svg">
@@ -414,27 +426,43 @@
                 </h3>
                 <div class="list row justify-content-center mb-3">
                     <div class="list__left col-12 col-lg-4 px-0 mb-5 mb-lg-0">
-                        <h4 class="h6 h5-lg border-bottom text-center text-lg-left py-1 px-lg-5">LINE</h4>
+                        <h4 class="h6 h5-lg border-bottom text-center text-lg-left py-1 px-lg-5">COMMUNITY</h4>
                         <ul class="p-3 p-md-5">
+                            <li class="d-flex align-items-center font-size-sm h6-md mb-2">
+                                <i class="fab fa-github list__faIcon text-center mr-2 mr-sm-3"></i>
+                                <a href="https://github.com/umon752" target="_blank">
+                                    Github
+                                </a>
+                            </li>
+                            <li class="d-flex align-items-center font-size-sm h6-md mb-2">
+                                <i class="fab fa-behance list__faIcon text-center mr-2 mr-sm-3"></i>
+                                <a href="https://www.behance.net/umon7523ce3" target="_blank">
+                                    Behance
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- <ul class="p-3 p-md-5">
                             <li
                                 class="d-flex justify-content-center justify-content-lg-start align-items-center font-size-sm h6-md">
                                 <img src="./assets/images/line.jpg" width="100">
                             </li>
-                        </ul>
+                        </ul> -->
                     </div>
                     <div class="list__right col-12 col-lg-4 px-0 mb-5 mb-lg-0">
                         <h4 class="h6 h5-lg border-bottom text-center text-lg-left py-1 px-lg-5">INFORMATION</h4>
                         <ul class="p-3 p-md-5">
                             <li class="d-flex align-items-center font-size-sm h6-md mb-2">
+                                <i class="list__faIcon far fa-envelope text-center mr-2 mr-sm-3"></i>
                                 <a href="mailto:umon752@gmail.com">
-                                    <i class="list__faIcon far fa-envelope text-center mr-2 mr-sm-3"></i>umon752@gmail.com
+                                    umon752@gmail.com
                                 </a>
                             </li>
-                            <li class="d-flex align-items-center font-size-sm h6-md mb-2">
+                            <!-- <li class="d-flex align-items-center font-size-sm h6-md mb-2">
+                                <i class="list__faIcon fas fa-mobile-alt text-center mr-2 mr-sm-3"></i>
                                 <a href="tel:0975690678">
-                                    <i class="list__faIcon fas fa-mobile-alt text-center mr-2 mr-sm-3"></i>0975-690-678
+                                    0975-690-678
                                 </a>
-                            </li>
+                            </li> -->
                             <li class="d-flex align-items-center font-size-sm h6-md">
                                 <i class="list__faIcon fas fa-map-marker-alt text-center mr-2 mr-sm-3"></i>Taoyuan City
                             </li>
@@ -451,7 +479,8 @@
                     <a href="#aboutMe" class="js-scrollAnimate footerLink font-size-sm h5-md px-md-7">About Me</a>
                 </li>
                 <li>
-                    <a href="#sideProject" class="js-scrollAnimate footerLink font-size-sm h5-md px-md-7">Side Project </a>
+                    <a href="#sideProject" class="js-scrollAnimate footerLink font-size-sm h5-md px-md-7">Side Project
+                    </a>
                 </li>
                 <li>
                     <a href="#contact" class="js-scrollAnimate footerLink font-size-sm h5-md px-md-7">Contact</a>
@@ -487,6 +516,7 @@
             return window.scrollY
         });
 
+        // stamp
         lax.addElements('.checkedStamp img', {
             scrollY: {
                 translateZ: [
