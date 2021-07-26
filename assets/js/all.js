@@ -70,34 +70,6 @@ $('.goTop').click(function (e) {
     }, 1000);
 })
 
-/* 橫屏時 */
-// window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", function () {
-
-//     if (window.orientation === 90 || window.orientation === -90) {
-//         $('.js-cover-subTitle').addClass('mb-2');
-//         $('.js-cover-subTitle').removeClass('mb-9');
-//         $('.cover__head').css('height', '13%');
-//         $('.cover__footer').css('height', '13%');
-//         $('.cover__body').css('height', '74%');
-//         $('.cover__body__icon ').css('position', 'static');
-//         $('.cover__body__icon ').css('animation', 'none');
-
-
-//         // height:1024px (pad)
-//         if ($(window).height() === 1024) {
-//             $('.cover__body__stamp').css('width', '180px');
-//             $('.cover__body__code').css('width', '260px');
-//             $('.cover__body__sticker').css('width', '260px');
-//             $('.cover__body__semicircle1').css('width', '140px');
-//             $('.cover__body__semicircle2').css('width', '140px');
-//             $('.js-cover-title').addClass('font-size-lg-lg');
-//             $('.js-cover-title').removeClass('font-size-lg-xl');
-//             $('.js-cover-subTitle').addClass('h1-lg');
-//             $('.js-cover-subTitle').removeClass('font-size-lg-lg');
-//         }
-//     }
-// }, false);
-
 let loadingAnimation;
 /* Loading 動畫 */
 function loading() {
