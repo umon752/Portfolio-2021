@@ -9,4 +9,4 @@ Demo：https://umon752.github.io/Portfolio-2021/
 ## 使用技術
 * 切版：`SCSS` `Bootstrap4`
 * 動態：`jQuery` `Anime.js` `Lax.js` `AOS`
-* 其他套件：`Swiper`
+* 其他套件：`Swiper` `Material Icons` `Font Awesome`
