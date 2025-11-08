@@ -499,18 +499,20 @@
 
 
 
-    <!-- Anime（CDN） -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-    <!-- AOS（CDN） -->
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <!-- Lax（Source） -->
+    <!-- anime v3.2.1 -->
+    <script src="./assets/js/vendors/anime.min.js"></script>
+    <!-- aos -->
+    <script src="./assets/js/vendors/aos.js"></script>
+    <!-- lax -->
     <script src="./assets/js/vendors/lax.min.js"></script>
-    <!-- jQuery（Source） -->
+    <!-- swiper v12.0.3 -->
+    <script src="./assets/js/vendors/swiper-bundle.min.js"></script>
+    <!-- jQuery -->
     <script src="./assets/js/vendors/jquery-3.6.0.min.js"></script>
     <script src="./assets/js/all.js"></script>
 
-    <!-- Lax（Module） -->
-    <script type="module">
+    <!-- lax -->
+    <script>
         lax.init();
 
         lax.addDriver('scrollY', function () {
@@ -532,9 +534,8 @@
         });
     </script>
 
-    <!-- Swiper（Module） -->
-    <script type="module">
-        import Swiper from 'https://unpkg.com/swiper/swiper-bundle.esm.browser.min.js'
+    <!-- swiper -->
+    <script>
         const swiper = new Swiper(".mySwiper", {
             slidesPerView: 1,
             centeredSlides: false,
